@@ -1,2 +1,8 @@
-# cdad-framework
-Context-Driven Adaptive Delivery framework for AI-augmented software delivery
+# CDAD Framework
+
+Context-Driven Adaptive Delivery
+
+Enterprise framework for AI-augmented delivery using:
+- CDAD governance
+- AWS AI-DLC execution
+- Devin guided orchestration
