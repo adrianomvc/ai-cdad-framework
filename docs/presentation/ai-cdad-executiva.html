@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>CDAD — Apresentação Executiva</title>
+<style>
+:root{
+  --orange:#EC7000; --blue:#003399; --deep:#001E5A; --yellow:#FFD200;
+  --ink:#F8FAFC; --muted:#D7E3FF; --line:rgba(255,255,255,.22);
+  --card:rgba(0,51,153,.72); --card2:rgba(0,30,90,.86);
+  --green:#2DD4BF; --red:#FF6B6B;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; color:var(--ink);
+  background:radial-gradient(circle at 12% 8%,rgba(236,112,0,.30),transparent 25%),
+             linear-gradient(135deg,#001E5A,#003399 55%,#001E5A);
+  overflow:hidden;
+}
+.deck{width:100vw;height:100vh;position:relative}
+.slide{display:none;position:absolute;inset:0;padding:48px 66px 72px}
+.slide.active{display:block}
+.num{position:absolute;top:22px;right:30px;color:rgba(255,255,255,.55);font-size:14px}
+h1{font-size:58px;line-height:1.02;margin:8px 0 16px;font-weight:850;letter-spacing:-1.8px}
+h2{font-size:39px;line-height:1.08;margin:0 0 24px;font-weight:820;letter-spacing:-.7px}
+h3{font-size:21px;margin:0 0 10px;color:var(--yellow)}
+p{font-size:21px;line-height:1.35;color:var(--muted);margin:7px 0}
+.small{font-size:15px;color:var(--muted);line-height:1.35}
+.tag{display:inline-block;border:1px solid var(--line);padding:8px 13px;border-radius:999px;background:rgba(0,30,90,.68);font-size:15px;margin-right:6px}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:76px;height:54px;border-radius:15px;background:var(--orange);color:var(--blue);font-weight:900;font-size:24px;letter-spacing:-1px;margin-bottom:16px;box-shadow:0 16px 44px rgba(0,0,0,.24)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 18px 45px rgba(0,0,0,.2)}
+.grid{display:grid;gap:16px}.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:repeat(3,1fr)}.cols4{grid-template-columns:repeat(4,1fr)}
+.flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:18px 0}
+.node{background:var(--card2);border:1px solid rgba(236,112,0,.66);border-radius:15px;padding:11px 13px;min-width:110px;text-align:center;font-size:15.5px}
+.node.human{border-color:var(--yellow);background:rgba(236,112,0,.22)}
+.node.ai{border-color:#77d8ff}.node.dev{border-color:var(--green)}.node.stop{border-color:var(--red)}
+.arrow{font-size:24px;color:var(--orange);font-weight:900}
+.footer{position:absolute;left:66px;right:66px;bottom:26px;display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.18);padding-top:11px;color:rgba(255,255,255,.58);font-size:14px}
+.controls{position:absolute;right:24px;bottom:18px;display:flex;gap:8px;z-index:10}
+button{background:var(--blue);color:white;border:1px solid var(--line);border-radius:12px;padding:9px 13px;cursor:pointer}
+button:hover{border-color:var(--orange)}
+.quote{font-size:30px;line-height:1.18;font-weight:780;border-left:5px solid var(--orange);padding-left:20px;margin-top:24px;color:white;max-width:1040px}
+.matrix{width:100%;border-collapse:collapse;font-size:16px}.matrix th,.matrix td{padding:11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.matrix th{background:rgba(0,30,90,.86);color:white}.matrix td{color:var(--muted)}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:rgba(0,30,90,.78);border:1px solid var(--line);border-radius:18px;padding:15px;font-size:13.5px;line-height:1.35;white-space:pre-wrap;color:#E5F0FF}
+.pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid var(--line);margin:3px;font-size:13px}
+</style>
+</head><body><div class="deck"><section class="slide active">
+<div class="num">1/8</div>
+
+<div class="badge">itaú</div><br>
+<span class="tag">CDAD v1</span><span class="tag">Atendimento Assistido</span><span class="tag">Executivo</span>
+<h1>CDAD<br><span style="color:var(--orange)">Context-Driven Adaptive Delivery</span></h1>
+<p>Um framework para acelerar entregas com IA, com governança adaptativa para greenfield, brownfield, bugs, incidentes e compliance.</p>
+<div class="quote">CDAD governa. AI-DLC executa. Devin orquestra guiado. Humanos mantêm ownership.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Visão Executiva</span></div>
+</section>
+<section class="slide">
+<div class="num">2/8</div>
+
+<h2>Por que precisamos disso?</h2>
+<div class="grid cols3">
+<div class="card"><h3>Velocidade</h3><p>IA acelera discovery técnico, shaping, execução, testes e documentação.</p></div>
+<div class="card"><h3>Segurança</h3><p>Hard stops, approvals, risk modes e context budget reduzem risco em brownfield.</p></div>
+<div class="card"><h3>Clareza</h3><p>PM, Tech Lead e Dev têm responsabilidades explícitas.</p></div>
+</div>
+<div class="quote">A proposta evita IA codando no escuro e evita o Tech Lead virar gargalo.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Problema e valor</span></div>
+</section>
+<section class="slide">
+<div class="num">3/8</div>
+
+<h2>Como funciona em alto nível</h2>
+<div class="flow">
+<div class="node">Entrada</div><div class="arrow">→</div>
+<div class="node ai">Intake</div><div class="arrow">→</div>
+<div class="node ai">Assessment</div><div class="arrow">→</div>
+<div class="node human">Design / TL</div><div class="arrow">→</div>
+<div class="node ai">Shaping</div><div class="arrow">→</div>
+<div class="node dev">Dev + Devin</div><div class="arrow">→</div>
+<div class="node ai">Validation</div><div class="arrow">→</div>
+<div class="node">Observe</div>
+</div>
+<div class="grid cols2">
+<div class="card"><h3>Entry Lanes</h3><p>Product, Operational, Engineering e Compliance.</p></div>
+<div class="card"><h3>Risk Modes</h3><p>FAST, HYBRID e SAFE, com rigor adaptativo.</p></div>
+</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Fluxo macro</span></div>
+</section>
+<section class="slide">
+<div class="num">4/8</div>
+
+<h2>Onde entram os humanos</h2>
+<table class="matrix">
+<tr><th>Papel</th><th>Responsabilidade</th><th>Momento</th></tr>
+<tr><td><b>PM</b></td><td>WHAT, valor, prioridade, aceite</td><td>Antes do CDAD, Product Lane</td></tr>
+<tr><td><b>Tech Lead</b></td><td>Arquitetura, risco, contratos, rollout</td><td>Design e gates críticos</td></tr>
+<tr><td><b>Developer</b></td><td>Execução, testes, PR, qualidade</td><td>Shaping, execução e review</td></tr>
+<tr><td><b>Security/Risk</b></td><td>Privacidade, evidências, auditoria</td><td>Compliance e hard stops</td></tr>
+</table>
+<div class="quote">Dev é AI-Augmented Engineer, não operador de prompts.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>HITL</span></div>
+</section>
+<section class="slide">
+<div class="num">5/8</div>
+
+<h2>Risk Modes</h2>
+<div class="grid cols3">
+<div class="card"><h3 style="color:var(--green)">FAST</h3><p>Baixo risco, bug local, feature isolada. Governança leve.</p></div>
+<div class="card"><h3 style="color:var(--yellow)">HYBRID</h3><p>Novo + legado, integração existente. Governança moderada.</p></div>
+<div class="card"><h3 style="color:var(--red)">SAFE</h3><p>Brownfield crítico, produção, contrato, PII. Governança forte.</p></div>
+</div>
+<p>Se houver incerteza relevante, o rigor sobe: FAST → HYBRID → SAFE.</p>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Governança adaptativa</span></div>
+</section>
+<section class="slide">
+<div class="num">6/8</div>
+
+<h2>Modelo de contexto sem token bloat</h2>
+<div class="grid cols2">
+<div class="card"><h3>Memória rica</h3><p>Artefatos completos ficam nos repositórios e no hub da sigla.</p></div>
+<div class="card"><h3>Runtime enxuto</h3><p>Devin carrega runtime-context, brief, shaping, policy summary e arquivos relevantes.</p></div>
+</div>
+<div class="quote">Guardar muito contexto. Carregar pouco contexto.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Context Budget</span></div>
+</section>
+<section class="slide">
+<div class="num">7/8</div>
+
+<h2>Arquitetura de repositórios</h2>
+<div class="grid cols3">
+<div class="card"><h3>cdad-framework</h3><p>Playbooks, policies, templates, prompts.</p></div>
+<div class="card"><h3>Hub da sigla</h3><p>Contexto global, índices, iniciativas cross.</p></div>
+<div class="card"><h3>Repo aplicação</h3><p>Execução local perto do código.</p></div>
+</div>
+<div class="flow"><div class="node">Framework</div><div class="arrow">→</div><div class="node">Hub</div><div class="arrow">↔</div><div class="node">Aplicação</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Repository Model</span></div>
+</section>
+<section class="slide">
+<div class="num">8/8</div>
+
+<h2>Próximo passo</h2>
+<div class="grid cols2">
+<div class="card"><h3>1. Criar repo pessoal</h3><p>Subir README, roteiro Devin, prompt e apresentação.</p></div>
+<div class="card"><h3>2. Rodar Devin em ciclos</h3><p>Planejar → scaffold → revisar → corrigir → exemplos → checklist final.</p></div>
+</div>
+<div class="quote">A implantação deve ser via PR, com checkpoints, não “big bang”.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Próximos passos</span></div>
+</section></div>
+<div class="controls"><button onclick="prev()">←</button><button onclick="next()">→</button></div>
+<script>
+let i=0; const slides=[...document.querySelectorAll('.slide')];
+function show(n){slides[i].classList.remove('active');i=(n+slides.length)%slides.length;slides[i].classList.add('active')}
+function next(){show(i+1)} function prev(){show(i-1)}
+document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))next(); if(['ArrowLeft','PageUp'].includes(e.key))prev();});
+</script>
+</body></html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CDAD — Fluxo detalhado etapa a etapa</title>
+<style>
+:root{
+  --orange:#EC7000; --blue:#003399; --deep:#001E5A; --yellow:#FFD200;
+  --ink:#F8FAFC; --muted:#D7E3FF; --line:rgba(255,255,255,.22);
+  --card:rgba(0,51,153,.72); --card2:rgba(0,30,90,.88);
+  --green:#2DD4BF; --red:#FF6B6B; --purple:#8B5CF6; --cyan:#67E8F9;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; color:var(--ink);
+  background:radial-gradient(circle at 10% 8%,rgba(236,112,0,.32),transparent 25%),
+             linear-gradient(135deg,#001E5A,#003399 55%,#001E5A);
+  overflow:hidden;
+}
+.deck{width:100vw;height:100vh;position:relative}
+.slide{display:none;position:absolute;inset:0;padding:44px 64px 70px}
+.slide.active{display:block}
+.num{position:absolute;top:20px;right:30px;color:rgba(255,255,255,.58);font-size:14px}
+h1{font-size:56px;line-height:1.02;margin:8px 0 14px;font-weight:850;letter-spacing:-1.7px}
+h2{font-size:37px;line-height:1.08;margin:0 0 20px;font-weight:820;letter-spacing:-.7px}
+h3{font-size:20px;margin:0 0 9px;color:var(--yellow)}
+p{font-size:20px;line-height:1.35;color:var(--muted);margin:7px 0}
+.small{font-size:15px;color:var(--muted);line-height:1.35}
+.tiny{font-size:13px;color:var(--muted);line-height:1.3}
+.tag{display:inline-block;border:1px solid var(--line);padding:7px 12px;border-radius:999px;background:rgba(0,30,90,.70);font-size:14px;margin-right:6px}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:76px;height:54px;border-radius:15px;background:var(--orange);color:var(--blue);font-weight:900;font-size:24px;letter-spacing:-1px;margin-bottom:14px;box-shadow:0 16px 44px rgba(0,0,0,.24)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 18px 45px rgba(0,0,0,.2)}
+.card.dark{background:var(--card2)}
+.grid{display:grid;gap:14px}.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:repeat(3,1fr)}.cols4{grid-template-columns:repeat(4,1fr)}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0}
+.node{background:var(--card2);border:1px solid rgba(236,112,0,.66);border-radius:14px;padding:10px 12px;min-width:105px;text-align:center;font-size:14.5px}
+.node.human{border-color:var(--yellow);background:rgba(236,112,0,.22)}
+.node.ai{border-color:var(--cyan)}
+.node.dev{border-color:var(--green)}
+.node.art{border-color:#94A3B8;background:#1E293B}
+.node.stop{border-color:var(--red)}
+.node.modeF{border-color:var(--green)}
+.node.modeH{border-color:var(--yellow)}
+.node.modeS{border-color:var(--red)}
+.arrow{font-size:22px;color:var(--orange);font-weight:900}
+.footer{position:absolute;left:64px;right:64px;bottom:24px;display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.18);padding-top:10px;color:rgba(255,255,255,.58);font-size:14px}
+.controls{position:absolute;right:24px;bottom:18px;display:flex;gap:8px;z-index:10}
+button{background:var(--blue);color:white;border:1px solid var(--line);border-radius:12px;padding:9px 13px;cursor:pointer}
+button:hover{border-color:var(--orange)}
+.quote{font-size:29px;line-height:1.18;font-weight:780;border-left:5px solid var(--orange);padding-left:20px;margin-top:20px;color:white;max-width:1060px}
+.matrix{width:100%;border-collapse:collapse;font-size:15.5px}.matrix th,.matrix td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.matrix th{background:rgba(0,30,90,.86);color:white}.matrix td{color:var(--muted)}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:rgba(0,30,90,.78);border:1px solid var(--line);border-radius:16px;padding:14px;font-size:13px;line-height:1.35;white-space:pre-wrap;color:#E5F0FF}
+.pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid var(--line);margin:3px;font-size:13px}
+.stage{display:grid;grid-template-columns:180px 1fr 230px;gap:12px;align-items:stretch;margin-top:10px}
+.stage .left{background:rgba(236,112,0,.22);border:1px solid var(--yellow);border-radius:18px;padding:14px}
+.stage .mid{background:rgba(0,51,153,.62);border:1px solid var(--line);border-radius:18px;padding:14px}
+.stage .right{background:rgba(0,30,90,.82);border:1px solid var(--line);border-radius:18px;padding:14px}
+</style>
+</head><body><div class="deck"><section class="slide active">
+<div class="num">1/26</div>
+
+<div class="badge">itaú</div><br>
+<span class="tag">CDAD v1</span><span class="tag">Fluxo detalhado</span><span class="tag">HITL</span>
+<h1>CDAD<br><span style="color:var(--orange)">fluxo etapa a etapa</span></h1>
+<p>Apresentação detalhada para compreender como cada demanda entra, é classificada, passa pelos humanos certos e chega à execução com Devin.</p>
+<div class="quote">Menos improviso. Mais contexto curado. Humanos decidindo no ponto certo.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Visão geral</span></div>
+</section><section class="slide">
+<div class="num">2/26</div>
+
+<h2>Mapa completo em uma tela</h2>
+<div class="flow">
+<div class="node">Entrada</div><div class="arrow">→</div>
+<div class="node ai">Intake</div><div class="arrow">→</div>
+<div class="node ai">Assessment</div><div class="arrow">→</div>
+<div class="node human">Design / TL</div><div class="arrow">→</div>
+<div class="node ai">Shaping</div><div class="arrow">→</div>
+<div class="node human">Dev Gate</div><div class="arrow">→</div>
+<div class="node dev">Dev + Devin</div><div class="arrow">→</div>
+<div class="node ai">Validation</div><div class="arrow">→</div>
+<div class="node human">Review</div><div class="arrow">→</div>
+<div class="node">Deploy</div><div class="arrow">→</div>
+<div class="node">Observe</div><div class="arrow">→</div>
+<div class="node art">Archive</div>
+</div>
+<div class="grid cols4">
+<div class="card"><h3>Humano</h3><p class="small">Aprova risco, contexto, viabilidade e PR.</p></div>
+<div class="card"><h3>IA / Devin</h3><p class="small">Gera artefatos, organiza contexto, executa tarefas.</p></div>
+<div class="card"><h3>Artefatos</h3><p class="small">Registram contexto, decisão, validação e evidência.</p></div>
+<div class="card"><h3>Policies</h3><p class="small">Definem gates, hard stops, DoR e DoD.</p></div>
+</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Fluxo end-to-end</span></div>
+</section><section class="slide">
+<div class="num">3/26</div>
+
+<h2>Etapa 0 — Entrada da demanda</h2>
+<div class="grid cols4">
+<div class="card"><h3>Product</h3><p>Vem do PM JIP - Brainstorm, negócio ou produto.</p></div>
+<div class="card"><h3>Operational</h3><p>Bug, incidente, hotfix, alerta ou produção degradada.</p></div>
+<div class="card"><h3>Engineering</h3><p>Tech debt, refactor, upgrade ou melhoria técnica.</p></div>
+<div class="card"><h3>Compliance</h3><p>Security, audit, LGPD, vulnerabilidade ou finding.</p></div>
+</div>
+<div class="quote">A Entry Lane define a origem da demanda. O Risk Mode define o rigor.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Etapa 0</span></div>
+</section><section class="slide">
+<div class="num">4/26</div>
+
+<h2>Etapa 1 — PM JIP - Brainstorm no Product Lane</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">PM valida problema, valor, prioridade e aceite.</p></div>
+<div class="mid"><h3>O que acontece</h3><p>O PM JIP - Brainstorm faz discovery/inception e entrega histórias ou contexto de negócio. O CDAD não implementa o PM; ele consome a saída.</p></div>
+<div class="right"><h3>Saída</h3><p class="small">História, critérios de aceite, contexto e prioridade.</p></div>
+</div>
+<div class="flow"><div class="node human">PM JIP - Brainstorm</div><div class="arrow">→</div><div class="node human">PM humano valida</div><div class="arrow">→</div><div class="node ai">CDAD Intake</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Product Lane</span></div>
+</section><section class="slide">
+<div class="num">5/26</div>
+
+<h2>Etapa 2 — CDAD Intake</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Valida só o mínimo: lane, urgência, problema e lacunas críticas.</p></div>
+<div class="mid"><h3>O que a IA faz</h3><p>Transforma qualquer entrada em um artefato padronizado e orienta o humano apenas quando falta algo bloqueante.</p></div>
+<div class="right"><h3>Artefato</h3><p class="small">normalized-entry.md</p></div>
+</div>
+<div class="code">Human Check:
+- Lane correta?
+- Urgência correta?
+- Problema correto?
+- Existe algo crítico faltando?</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Intake</span></div>
+</section><section class="slide">
+<div class="num">6/26</div>
+
+<h2>Etapa 3 — Triage quando necessário</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Dev/TL/Security valida severidade, impacto e responsável.</p></div>
+<div class="mid"><h3>Quando usa</h3><p>Principalmente em bug, incidente, hotfix, compliance ou engenharia ambígua.</p></div>
+<div class="right"><h3>Artefato</h3><p class="small">triage-report.md</p></div>
+</div>
+<div class="flow"><div class="node">Bug / Finding</div><div class="arrow">→</div><div class="node ai">Triage Draft</div><div class="arrow">→</div><div class="node human">Humano valida severidade</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Triage</span></div>
+</section><section class="slide">
+<div class="num">7/26</div>
+
+<h2>Etapa 4 — Delivery Assessment</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Entra quando houver ambiguidade, SAFE ou risco crítico.</p></div>
+<div class="mid"><h3>O que a IA faz</h3><p>Aplica policy-based routing para classificar FAST, HYBRID ou SAFE, explicando regras acionadas e gates necessários.</p></div>
+<div class="right"><h3>Artefato</h3><p class="small">delivery-assessment.md</p></div>
+</div>
+<div class="flow"><div class="node ai">IA aplica policy</div><div class="arrow">→</div><div class="node modeF">FAST</div><div class="node modeH">HYBRID</div><div class="node modeS">SAFE</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Assessment</span></div>
+</section><section class="slide">
+<div class="num">8/26</div>
+
+<h2>Etapa 5 — Risk Modes</h2>
+<table class="matrix">
+<tr><th>Modo</th><th>Uso</th><th>Humanos</th><th>Validação</th></tr>
+<tr><td><b style="color:var(--green)">FAST</b></td><td>Baixo risco, bug local, greenfield simples</td><td>Dev review</td><td>lint, unit test, PR quality</td></tr>
+<tr><td><b style="color:var(--yellow)">HYBRID</b></td><td>Novo + legado, integração existente</td><td>Dev + TL seletivo</td><td>integration, observability readiness</td></tr>
+<tr><td><b style="color:var(--red)">SAFE</b></td><td>Brownfield crítico, contrato, produção, PII</td><td>TL obrigatório + Dev + Security se necessário</td><td>contract, regression, rollback, deploy checklist</td></tr>
+</table>
+<p>Safe default: incerteza relevante aumenta o rigor.</p>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Risk Modes</span></div>
+</section><section class="slide">
+<div class="num">9/26</div>
+
+<h2>Etapa 6 — Contexto técnico curado</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Tech Lead valida contexto quando a decisão for relevante.</p></div>
+<div class="mid"><h3>O que a IA faz</h3><p>Antes de consultar MCP, cria um plano de busca. Depois consolida evidências em um contexto técnico enxuto.</p></div>
+<div class="right"><h3>Artefatos</h3><p class="small">mcp-query-plan.md<br/>technical-context-pack.md</p></div>
+</div>
+<div class="flow"><div class="node ai">Query Plan</div><div class="arrow">→</div><div class="node ai">MCP controlado</div><div class="arrow">→</div><div class="node art">Context Pack</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>MCP</span></div>
+</section><section class="slide">
+<div class="num">10/26</div>
+
+<h2>Etapa 7 — Tech Lead Design</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Tech Lead aprova arquitetura, risco, contrato, rollout e rollback.</p></div>
+<div class="mid"><h3>O que a IA faz</h3><p>Gera drafts de análise de impacto, Lean SDD, opções técnicas, rollout e rollback. Não aceita risco sozinha.</p></div>
+<div class="right"><h3>Artefatos</h3><p class="small">impact-analysis.md<br/>lean-sdd.md<br/>rollout/rollback</p></div>
+</div>
+<div class="quote">Tech Lead Agent prepara. Tech Lead humano decide.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Tech Lead Design</span></div>
+</section><section class="slide">
+<div class="num">11/26</div>
+
+<h2>Etapa 8 — Playbooks CDAD</h2>
+<div class="grid cols2">
+<div class="card"><h3>Tech Lead Playbook</h3><p>Usado para design, impacto, risco, contratos, migração, rollout, rollback e observabilidade.</p><span class="pill">core.md</span><span class="pill">fast</span><span class="pill">hybrid</span><span class="pill">safe</span></div>
+<div class="card"><h3>Developer Playbook</h3><p>Usado para execução, AI steering, testes, edge cases, PR quality, validação e evidências.</p><span class="pill">core.md</span><span class="pill">fast</span><span class="pill">hybrid</span><span class="pill">safe</span></div>
+</div>
+<div class="flow"><div class="node">Risk Mode</div><div class="arrow">→</div><div class="node">Core Playbook</div><div class="arrow">+</div><div class="node">Overlay do modo</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Playbooks</span></div>
+</section><section class="slide">
+<div class="num">12/26</div>
+
+<h2>Etapa 9 — Solution Shaping</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Tech Lead não precisa quebrar tudo. Dev valida executabilidade depois.</p></div>
+<div class="mid"><h3>O que a IA faz</h3><p>Transforma design aprovado em slices, tasks, dependências, DoD, arquivos prováveis e validações esperadas.</p></div>
+<div class="right"><h3>Artefatos</h3><p class="small">local-shaping-plan.md<br/>runtime-context.md<br/>relevant-files-list.md</p></div>
+</div>
+<div class="quote">Shaping conecta decisão técnica com execução real.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Shaping</span></div>
+</section><section class="slide">
+<div class="num">13/26</div>
+
+<h2>Etapa 10 — Workstream Organizer</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">TL/Dev intervêm se houver conflito ou SAFE crítico.</p></div>
+<div class="mid"><h3>O que a IA faz</h3><p>Define se há tarefas independentes que podem rodar em paralelo. Cada workstream tem escopo, arquivos permitidos e ordem de merge.</p></div>
+<div class="right"><h3>Artefato</h3><p class="small">parallel-execution-plan.md</p></div>
+</div>
+<div class="flow"><div class="node">Code</div><div class="node">Tests</div><div class="node">Docs/Obs</div><div class="arrow">→</div><div class="node ai">Consolidação</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Paralelismo</span></div>
+</section><section class="slide">
+<div class="num">14/26</div>
+
+<h2>Etapa 11 — Developer Feasibility Gate</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Developer valida escopo, execução e riscos antes de Devin codar.</p></div>
+<div class="mid"><h3>O que precisa validar</h3><p>Tasks executáveis, arquivos permitidos, fora de escopo claro, stop conditions, validações e hard stops.</p></div>
+<div class="right"><h3>Registro</h3><p class="small">approval-record.md quando necessário</p></div>
+</div>
+<div class="quote">Esse gate impede Devin de executar com um plano errado.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Developer Gate</span></div>
+</section><section class="slide">
+<div class="num">15/26</div>
+
+<h2>Etapa 12 — Devin Execution Brief</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Dev valida o brief antes da execução.</p></div>
+<div class="mid"><h3>O que contém</h3><p>Objetivo, escopo, fora de escopo, risk mode, arquivos, gates, hard stops, validações e stop conditions.</p></div>
+<div class="right"><h3>Artefato</h3><p class="small">devin-execution-brief.md</p></div>
+</div>
+<div class="code">Stop Conditions:
+- se contrato/schema for impactado
+- se produção crítica aparecer
+- se contexto for insuficiente
+- se testes indicarem regressão</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Execution Brief</span></div>
+</section><section class="slide">
+<div class="num">16/26</div>
+
+<h2>Etapa 13 — Execução Dev + Devin</h2>
+<div class="grid cols2">
+<div class="card"><h3>Devin executa</h3><p>Código, testes, refactor, PR, atualização de artefatos e evidências.</p></div>
+<div class="card"><h3>Developer conduz</h3><p>Orienta, corrige, valida edge cases, revisa e assume ownership do PR.</p></div>
+</div>
+<div class="flow"><div class="node dev">Dev + Devin</div><div class="arrow">→</div><div class="node">Código</div><div class="node">Testes</div><div class="node">PR</div><div class="node art">Evidências</div></div>
+<div class="quote">Devin acelera. Developer responde pela execução.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Execução</span></div>
+</section><section class="slide">
+<div class="num">17/26</div>
+
+<h2>Etapa 14 — Validation</h2>
+<table class="matrix">
+<tr><th>Modo</th><th>Validações</th><th>Humano</th></tr>
+<tr><td>FAST</td><td>lint, unit tests, validation-report, dev review</td><td>Dev</td></tr>
+<tr><td>HYBRID</td><td>FAST + integration, observability readiness, rollout</td><td>Dev + TL seletivo</td></tr>
+<tr><td>SAFE</td><td>HYBRID + contract, regression, rollback, deploy checklist</td><td>TL obrigatório + Dev</td></tr>
+</table>
+<div class="flow"><div class="node ai">Validation Agent</div><div class="arrow">→</div><div class="node art">validation-report.md</div><div class="node art">observability-checklist.md</div><div class="node art">pr-summary.md</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Validation</span></div>
+</section><section class="slide">
+<div class="num">18/26</div>
+
+<h2>Etapa 15 — Review / Approval</h2>
+<div class="grid cols3">
+<div class="card"><h3>FAST</h3><p>Dev review normalmente basta.</p></div>
+<div class="card"><h3>HYBRID</h3><p>TL entra seletivamente conforme integração, arquitetura ou contrato.</p></div>
+<div class="card"><h3>SAFE</h3><p>TL obrigatório. Security/Risk se envolver compliance ou PII.</p></div>
+</div>
+<div class="quote">Aprova onde o trabalho acontece. Registra oficialmente em approval-record.md.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Review</span></div>
+</section><section class="slide">
+<div class="num">19/26</div>
+
+<h2>Etapa 16 — Deploy / Resolve</h2>
+<table class="matrix">
+<tr><th>Modo</th><th>Estratégia</th><th>Obrigatório</th></tr>
+<tr><td>FAST</td><td>Deploy direto ou canary simples</td><td>Validação mínima</td></tr>
+<tr><td>HYBRID</td><td>Canary, feature flag, controlled rollout</td><td>Plano de rollout</td></tr>
+<tr><td>SAFE</td><td>Blue/green, shadow, parallel run, rollback</td><td>Rollback e TL approval</td></tr>
+</table>
+<div class="flow"><div class="node">Deploy</div><div class="arrow">→</div><div class="node">Observe</div><div class="arrow">→</div><div class="node">Close</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Deploy</span></div>
+</section><section class="slide">
+<div class="num">20/26</div>
+
+<h2>Etapa 17 — Observe & Learn</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Dev/TL validam aprendizados quando relevante.</p></div>
+<div class="mid"><h3>O que observar</h3><p>Erro, latência, incidentes, custo, logs, métricas, KPIs e sinais de degradação.</p></div>
+<div class="right"><h3>Artefatos</h3><p class="small">lessons-learned.md<br/>initiative-summary.md</p></div>
+</div>
+<div class="quote">Observabilidade é capability contínua, não só checklist.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Observe & Learn</span></div>
+</section><section class="slide">
+<div class="num">21/26</div>
+
+<h2>Etapa 18 — Close / Archive</h2>
+<div class="stage">
+<div class="left"><h3>Humano</h3><p class="small">Valida fechamento em SAFE ou decisão crítica.</p></div>
+<div class="mid"><h3>O que acontece</h3><p>Iniciativa sai de active, vai para archived e vira cold context. O histórico existe, mas não entra no contexto padrão.</p></div>
+<div class="right"><h3>Artefato</h3><p class="small">initiative-summary.md</p></div>
+</div>
+<div class="flow"><div class="node">Active</div><div class="arrow">→</div><div class="node art">Summary</div><div class="arrow">→</div><div class="node">Archived</div><div class="arrow">→</div><div class="node">Cold Context</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Close / Archive</span></div>
+</section><section class="slide">
+<div class="num">22/26</div>
+
+<h2>Fluxo específico: bug em aplicação</h2>
+<div class="flow">
+<div class="node">Bug informado</div><div class="arrow">→</div>
+<div class="node ai">normalized-entry</div><div class="arrow">→</div>
+<div class="node human">Triage Dev/TL</div><div class="arrow">→</div>
+<div class="node ai">Assessment</div><div class="arrow">→</div>
+<div class="node ai">Contexto local</div><div class="arrow">→</div>
+<div class="node ai">runtime-context</div><div class="arrow">→</div>
+<div class="node human">Dev Gate</div><div class="arrow">→</div>
+<div class="node dev">Dev + Devin</div><div class="arrow">→</div>
+<div class="node ai">Validation</div>
+</div>
+<div class="card"><p>Para bug local, começa pelo repo da aplicação e consulta o hub apenas para conflitos, riscos e contratos.</p></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Exemplo bug</span></div>
+</section><section class="slide">
+<div class="num">23/26</div>
+
+<h2>Hard Stops</h2>
+<div class="grid cols4">
+<div class="card"><h3>Produção</h3><p class="small">Deploy, hotfix ou job produtivo.</p></div>
+<div class="card"><h3>Contrato</h3><p class="small">API, schema, evento ou payload.</p></div>
+<div class="card"><h3>PII/IAM</h3><p class="small">Dados sensíveis, LGPD, roles, secrets.</p></div>
+<div class="card"><h3>Destrutivo</h3><p class="small">Delete, drop, truncate, migration irreversível.</p></div>
+</div>
+<div class="flow"><div class="node stop">Hard Stop</div><div class="arrow">→</div><div class="node ai">Explica risco</div><div class="arrow">→</div><div class="node human">Pede aprovação</div><div class="arrow">→</div><div class="node art">Registra decisão</div></div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Governance</span></div>
+</section><section class="slide">
+<div class="num">24/26</div>
+
+<h2>Context Minimization</h2>
+<div class="grid cols2">
+<div class="card"><h3>Carrega sempre</h3><p>runtime-context, execution brief, shaping local, policy summary e arquivos relevantes.</p></div>
+<div class="card"><h3>Não carrega por padrão</h3><p>Histórico, repo inteiro, policies completas, SDD completo e contexto global inteiro.</p></div>
+</div>
+<div class="code">Nunca remover para economizar token:
+- risk mode
+- scope / out of scope
+- hard stops
+- required gates
+- stop conditions
+- human owner
+- validation requirements
+- evidence references</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Tokens</span></div>
+</section><section class="slide">
+<div class="num">25/26</div>
+
+<h2>Status UX obrigatório</h2>
+<div class="code">## CDAD Status Update
+
+Current Stage:
+Current State:
+Created/Updated Artifacts:
+Human Action Required:
+Blocking Issues:
+Next Step:
+Confidence:</div>
+<div class="quote">O humano sempre sabe onde está, o que foi criado, quem valida, o que bloqueia e o próximo passo.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Status UX</span></div>
+</section><section class="slide">
+<div class="num">26/26</div>
+
+<h2>Resumo final</h2>
+<div class="grid cols2">
+<div class="card"><h3>O que o CDAD entrega</h3><p>Governança adaptativa, contexto mínimo seguro, artefatos rastreáveis e execução acelerada por IA.</p></div>
+<div class="card"><h3>Como implantar</h3><p>Repo pessoal primeiro, Devin em ciclos, revisão arquitetural, exemplos e tabletop tests.</p></div>
+</div>
+<div class="quote">PM define o quê. Tech Lead define direção. Developer executa. IA acelera. CDAD governa.</div>
+
+<div class="footer"><span>Comunidade Atendimento Assistido</span><span>Resumo</span></div>
+</section></div>
+<div class="controls"><button onclick="prev()">←</button><button onclick="next()">→</button></div>
+<script>
+let i=0; const slides=[...document.querySelectorAll('.slide')];
+function show(n){slides[i].classList.remove('active');i=(n+slides.length)%slides.length;slides[i].classList.add('active')}
+function next(){show(i+1)} function prev(){show(i-1)}
+document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))next(); if(['ArrowLeft','PageUp'].includes(e.key))prev();});
+</script>
+</body></html>

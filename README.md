@@ -1,15 +1,17 @@
-# CDAD — Context-Driven Adaptive Delivery
+# AI-CDAD — AI Context-Driven Adaptive Delivery
 
-Framework para entrega de software com IA, combinando:
+AI-CDAD é um framework de entrega adaptativa guiada por contexto para squads que usam IA no delivery de software e dados.
 
-- CDAD como camada de governança
-- AWS AI-DLC como execution engine
-- Devin como guided orchestrator
-- Humanos mantendo ownership
+## Posicionamento
+
+> AI-CDAD governa.  
+> AWS AI-DLC executa.  
+> Devin orquestra guiado.  
+> Humanos mantêm ownership.
 
 ## Objetivo
 
-Apoiar entregas:
+Apoiar entregas com IA em:
 
 - Greenfield
 - Brownfield
@@ -18,12 +20,45 @@ Apoiar entregas:
 - Incidentes
 - Hotfixes
 - Tech debt
-- Compliance / Security
+- Refactor
+- Compliance / Security remediation
 
-## Princípios
+## Filosofia
 
-- CDAD governs
-- AI-DLC executes
-- Devin orchestrates under guidance
+- Context before code
 - Humans own decisions
 - AI accelerates execution
+- Policy-based routing
+- Risk-adaptive governance
+- Minimal runtime context
+- Evidence-based execution
+
+## Papéis humanos
+
+| Papel | Responsabilidade |
+|---|---|
+| PM JIP - Brainstorm | Define WHAT, WHY, VALUE, PRIORITY |
+| Tech Lead | Define arquitetura, risco, contratos, rollout e rollback |
+| Developer | É dono da execução, testes, PR e qualidade |
+| Security/Risk | Valida compliance, segurança, privacidade e evidências quando necessário |
+
+## Estrutura
+
+```text
+architecture/     visão geral e desenho operacional
+playbooks/        playbooks Tech Lead e Developer
+policies/         políticas de governança, contexto, routing e validação
+templates/        templates de artefatos
+agent-roles/      papéis agenticos lógicos executados pelo Devin
+prompts/devin/    prompts para instalação e revisão no Devin
+examples/         fluxos simulados
+docs/             apresentações, decisões e notas
+```
+
+## Como usar
+
+1. Suba este conteúdo no seu GitHub pessoal.
+2. Abra o repo no Devin.
+3. Execute primeiro `prompts/devin/00-plan-before-files.md`.
+4. Depois siga os prompts em ordem.
+5. Faça tabletop tests com os exemplos.
