@@ -1,8 +1,29 @@
-# CDAD Framework
+# CDAD — Context-Driven Adaptive Delivery
 
-Context-Driven Adaptive Delivery
+Framework para entrega de software com IA, combinando:
 
-Enterprise framework for AI-augmented delivery using:
-- CDAD governance
-- AWS AI-DLC execution
-- Devin guided orchestration
+- CDAD como camada de governança
+- AWS AI-DLC como execution engine
+- Devin como guided orchestrator
+- Humanos mantendo ownership
+
+## Objetivo
+
+Apoiar entregas:
+
+- Greenfield
+- Brownfield
+- Hybrid
+- Bugs
+- Incidentes
+- Hotfixes
+- Tech debt
+- Compliance / Security
+
+## Princípios
+
+- CDAD governs
+- AI-DLC executes
+- Devin orchestrates under guidance
+- Humans own decisions
+- AI accelerates execution
