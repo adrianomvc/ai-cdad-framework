@@ -36,22 +36,22 @@ No failures found.
 
 ## Detailed Checks
 
-### PASS — No sensitive term: Itaú / Itau
+### PASS — No sensitive term: Organization / Organization
 
 - Severity: critical
 - Evidence: occurrences: 0
 
-### PASS — No sensitive term: Atendimento Assistido
+### PASS — No sensitive term: AI Delivery Community
 
 - Severity: critical
 - Evidence: occurrences: 0
 
-### PASS — No sensitive term: Adriano
+### PASS — No sensitive term: Maintainer
 
 - Severity: critical
 - Evidence: occurrences: 0
 
-### PASS — No sensitive term: Comunidade Atendimento
+### PASS — No sensitive term: AI Delivery Community
 
 - Severity: critical
 - Evidence: occurrences: 0
@@ -61,7 +61,7 @@ No failures found.
 - Severity: critical
 - Evidence: occurrences: 0
 
-### PASS — No sensitive term: JIP
+### PASS — No sensitive term: Product Discovery Agent
 
 - Severity: critical
 - Evidence: occurrences: 0

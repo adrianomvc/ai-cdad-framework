@@ -675,3 +675,16 @@ See:
 ```text
 docs/notes/tool-configuration-guide.md
 ```
+
+---
+
+## Configuration and usage guides
+
+For setup and operation, see:
+
+```text
+docs/usage/quickstart.md
+docs/usage/configuration-guide.md
+docs/usage/operating-manual.md
+docs/notes/tool-configuration-guide.md
+```

@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.12 — Final Configuration and Usage Instructions
+
+- Added `docs/usage/quickstart.md`.
+- Added `docs/usage/configuration-guide.md`.
+- Added `docs/usage/operating-manual.md`.
+- Added final package inventory validation.
+- Added explicit instructions to configure and use AI-CDAD with application repos and AI tool configs.
+
+
 ## v0.11 — Tool Configuration Templates
 
 - Added optional tool configuration templates under `tool-configs/`.
