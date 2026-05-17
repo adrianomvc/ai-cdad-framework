@@ -38,4 +38,7 @@ Rules:
 - Stop if production, contract/schema/API/event, PII, IAM/security or destructive operations appear.
 - Produce validation evidence.
 - Return an AI-CDAD Status Update.
+- Infer the human-facing language from the user's request, existing artifacts and repository/team conventions.
+- If the user communicates in Portuguese, use Portuguese Brazilian (`pt-BR`) by default.
+- Keep code, commands, filenames, logs, stack traces, API names and existing technical terms in their original language.
 ```

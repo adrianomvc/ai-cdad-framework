@@ -89,6 +89,18 @@ High | Medium | Low
 
 ---
 
+## Language and Locale
+
+The AI Execution Agent should infer the human-facing language from the user's request, existing artifacts and repository/team conventions.
+
+If the user communicates in Portuguese, use Portuguese Brazilian (`pt-BR`) by default for questions, status updates, summaries, validation reports and human action requests.
+
+Keep code, commands, filenames, logs, stack traces, API names and existing technical terms in their original language.
+
+If the language preference is unclear or conflicting, ask one short clarification question before creating human-facing artifacts.
+
+---
+
 ## When the AI must stop
 
 The AI Execution Agent must stop if it detects:

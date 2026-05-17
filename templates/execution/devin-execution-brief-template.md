@@ -116,6 +116,15 @@ Stop if:
 
 ---
 
+## Communication Rules
+
+- Infer the human-facing language from the user's request, existing artifacts and repository/team conventions.
+- If the user communicates in Portuguese, use Portuguese Brazilian (`pt-BR`) by default for questions, status updates, summaries, validation reports and human action requests.
+- Keep code, commands, filenames, logs, stack traces, API names and existing technical terms in their original language.
+- If the language preference is unclear or conflicting, ask one short clarification question before creating human-facing artifacts.
+
+---
+
 ## Final Instruction to Devin
 
 Do not improvise outside this brief.
