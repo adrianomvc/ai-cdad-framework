@@ -4,9 +4,10 @@ Use this prompt when working interactively in an IDE with Cursor or GitHub Copil
 
 Context:
 
-- runtime-context.md
-- ai-execution-brief.md
-- relevant-files-list.md
+- 00-flow-index.md
+- 04-execution/runtime-context.md
+- 04-execution/ai-execution-brief.md
+- 04-execution/relevant-files-list.md
 
 Act as an AI pair-programmer under AI-CDAD.
 

@@ -18,8 +18,8 @@ Define safe workstreams that can execute in parallel.
 
 All workstreams must use:
 
-- runtime-context.md
-- relevant-files-list.md
+- 04-execution/runtime-context.md
+- 04-execution/relevant-files-list.md
 - applicable policy summary
 
 ---

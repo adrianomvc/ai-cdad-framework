@@ -90,9 +90,11 @@ Minimum:
 
 Minimum:
 
-- `runtime-context.md`
-- `local-shaping-plan.md` or equivalent
-- `ai-execution-brief.md`
+- `00-flow-index.md`
+- `04-execution/runtime-context.md`
+- `03-design/local-shaping-plan.md` or equivalent
+- `04-execution/ai-execution-brief.md`
+- `04-execution/relevant-files-list.md`
 - risk mode
 - developer owner
 - scope

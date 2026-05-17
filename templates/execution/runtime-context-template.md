@@ -106,7 +106,7 @@ Stop if:
 
 ## Relevant Files
 
-Use `relevant-files-list.md` for details.
+Use `04-execution/relevant-files-list.md` for details.
 
 ---
 

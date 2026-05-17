@@ -4,9 +4,10 @@ You are Claude Code acting as an AI Execution Agent under AI-CDAD.
 
 Read and follow:
 
-- runtime-context.md
-- ai-execution-brief.md
-- relevant-files-list.md
+- 00-flow-index.md
+- 04-execution/runtime-context.md
+- 04-execution/ai-execution-brief.md
+- 04-execution/relevant-files-list.md
 - developer playbook core + current risk overlay
 
 Do not edit files yet.

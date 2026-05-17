@@ -177,16 +177,17 @@ devin-execution-brief.md
 
 Every AI Execution Agent must:
 
-1. read `runtime-context.md`
-2. read `ai-execution-brief.md`
-3. respect scope and out of scope
-4. follow the applicable playbook
-5. obey hard stops
-6. ask for minimum missing context when blocked
-7. generate validation evidence
-8. produce AI-CDAD Status Updates
-9. never approve its own work
-10. never accept risk on behalf of humans
+1. read `00-flow-index.md`
+2. read `04-execution/runtime-context.md`
+3. read `04-execution/ai-execution-brief.md`
+4. respect scope and out of scope
+5. follow the applicable playbook
+6. obey hard stops
+7. ask for minimum missing context when blocked
+8. generate validation evidence
+9. produce AI-CDAD Status Updates
+10. never approve its own work
+11. never accept risk on behalf of humans
 
 ---
 
@@ -411,11 +412,19 @@ Contains local AI-CDAD execution artifacts:
   framework-ref.md
   initiatives/
       <initiative-id>/
-        runtime-context.md
-        ai-execution-brief.md
-        validation-report.md
-        implementation-notes.md
-        pr-summary.md
+        00-flow-index.md
+        01-intake/
+        02-assessment/
+        03-design/
+        04-execution/
+          runtime-context.md
+          ai-execution-brief.md
+          implementation-notes.md
+        05-validation/
+          validation-report.md
+          pr-summary.md
+        06-governance/
+        07-closure/
 ```
 
 Purpose:
@@ -437,11 +446,12 @@ Do not duplicate everything everywhere.
 | global product/domain context | central community repository |
 | initiative registry | central community repository |
 | repo/component impact indexes | central community repository |
-| runtime-context.md | application repository |
-| ai-execution-brief.md | application repository |
-| devin-execution-brief.md | application repository when using Devin |
-| validation-report.md | application repository |
-| approval-record.md | hub or local, depending on scope |
+| 00-flow-index.md | application repository |
+| 04-execution/runtime-context.md | application repository |
+| 04-execution/ai-execution-brief.md | application repository |
+| 04-execution/devin-execution-brief.md | application repository when using Devin |
+| 05-validation/validation-report.md | application repository |
+| 06-governance/approval-record.md | hub or local, depending on scope |
 | initiative-summary.md | hub when archived |
 
 ---
@@ -460,7 +470,7 @@ AI sessions use minimal runtime context.
 Primary runtime artifact:
 
 ```text
-runtime-context.md
+04-execution/runtime-context.md
 ```
 
 It contains:

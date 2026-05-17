@@ -34,12 +34,13 @@ What the AI Execution Agent should accomplish.
 
 ## Required Inputs
 
-- runtime-context.md
-- local-shaping-plan.md
-- relevant-files-list.md
-- delivery-assessment.md
-- approval-record.md, if applicable
-- rollback-plan.md, if applicable
+- 00-flow-index.md
+- 04-execution/runtime-context.md
+- 03-design/local-shaping-plan.md
+- 04-execution/relevant-files-list.md
+- 02-assessment/delivery-assessment.md
+- 06-governance/approval-record.md, if applicable
+- 03-design/rollback-plan.md, if applicable
 
 ## Playbooks to Use
 
@@ -92,9 +93,9 @@ Stop if:
 - code changes
 - tests
 - PR/diff summary
-- validation-report.md
-- pr-summary.md
-- implementation-notes.md
+- 05-validation/validation-report.md
+- 05-validation/pr-summary.md
+- 04-execution/implementation-notes.md
 
 ## Evidence Requirements
 

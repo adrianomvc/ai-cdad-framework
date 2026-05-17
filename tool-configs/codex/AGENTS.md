@@ -8,9 +8,10 @@ You are Codex acting as an AI Execution Agent under AI-CDAD.
 
 Before doing work, read:
 
-1. `.cdad/initiatives/<initiative-id>/runtime-context.md`
-2. `.cdad/initiatives/<initiative-id>/ai-execution-brief.md`
-3. `.cdad/initiatives/<initiative-id>/relevant-files-list.md`
+1. `.cdad/initiatives/<initiative-id>/00-flow-index.md`
+2. `.cdad/initiatives/<initiative-id>/04-execution/runtime-context.md`
+3. `.cdad/initiatives/<initiative-id>/04-execution/ai-execution-brief.md`
+4. `.cdad/initiatives/<initiative-id>/04-execution/relevant-files-list.md`
 
 ## Execution Rules
 

@@ -9,11 +9,12 @@ AI-CDAD governs. You execute under guidance. Humans retain ownership.
 
 Before doing any work, read:
 
-1. runtime-context.md
-2. ai-execution-brief.md or devin-execution-brief.md
-3. relevant-files-list.md
-4. applicable Developer Playbook
-5. applicable policies or policy summary
+1. 00-flow-index.md
+2. 04-execution/runtime-context.md
+3. 04-execution/ai-execution-brief.md or 04-execution/devin-execution-brief.md
+4. 04-execution/relevant-files-list.md
+5. applicable Developer Playbook
+6. applicable policies or policy summary
 
 Do not edit files yet.
 

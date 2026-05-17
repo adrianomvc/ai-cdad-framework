@@ -121,9 +121,10 @@ Do not rely on indexed knowledge alone.
 The execution session must still use:
 
 ```text
-runtime-context.md
-ai-execution-brief.md
-relevant-files-list.md
+00-flow-index.md
+04-execution/runtime-context.md
+04-execution/ai-execution-brief.md
+04-execution/relevant-files-list.md
 ```
 
 ---
@@ -155,28 +156,36 @@ For each initiative, create:
 
 ```text
 .cdad/initiatives/<initiative-id>/
-  initiative-ref.md
-  normalized-entry.md
-  triage-report.md
-  delivery-assessment.md
-  runtime-context.md
-  relevant-files-list.md
-  local-shaping-plan.md
-  ai-execution-brief.md
-  validation-report.md
-  pr-summary.md
+  00-flow-index.md
+  01-intake/
+    initiative-ref.md
+    normalized-entry.md
+    triage-report.md
+  02-assessment/
+    delivery-assessment.md
+  03-design/
+    local-shaping-plan.md
+  04-execution/
+    runtime-context.md
+    relevant-files-list.md
+    ai-execution-brief.md
+  05-validation/
+    validation-report.md
+    pr-summary.md
+  06-governance/
+  07-closure/
 ```
 
 If using Devin-specific naming, this may also include:
 
 ```text
-devin-execution-brief.md
+04-execution/devin-execution-brief.md
 ```
 
 The preferred generic artifact remains:
 
 ```text
-ai-execution-brief.md
+04-execution/ai-execution-brief.md
 ```
 
 ---
@@ -230,7 +239,7 @@ If Devin creates a PR, it must include:
 Artifact:
 
 ```text
-pr-summary.md
+05-validation/pr-summary.md
 ```
 
 ---
@@ -278,11 +287,12 @@ You are Devin acting as an AI Execution Agent under AI-CDAD.
 
 Before making changes, read:
 
-1. runtime-context.md
-2. ai-execution-brief.md or devin-execution-brief.md
-3. relevant-files-list.md
-4. applicable playbook
-5. applicable policy summary
+1. 00-flow-index.md
+2. 04-execution/runtime-context.md
+3. 04-execution/ai-execution-brief.md or 04-execution/devin-execution-brief.md
+4. 04-execution/relevant-files-list.md
+5. applicable playbook
+6. applicable policy summary
 
 Do not change files yet.
 

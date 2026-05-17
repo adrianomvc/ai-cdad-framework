@@ -26,7 +26,7 @@ Examples:
 
 - current initiative
 - current repo
-- current runtime-context.md
+- current 04-execution/runtime-context.md
 - current execution brief
 - current validation artifacts
 

@@ -9,13 +9,14 @@ For each demand:
 3. Run triage if needed.
 4. Create `delivery-assessment.md`.
 5. Classify risk mode: FAST, HYBRID or SAFE.
-6. Create `runtime-context.md`.
-7. Create `ai-execution-brief.md`.
-8. Run AI Execution Agent.
-9. Validate.
-10. Review.
-11. Deploy or resolve.
-12. Observe and archive.
+6. Create or update `00-flow-index.md`.
+7. Create `04-execution/runtime-context.md`.
+8. Create `04-execution/ai-execution-brief.md`.
+9. Run AI Execution Agent.
+10. Validate.
+11. Review.
+12. Deploy or resolve.
+13. Observe and archive.
 
 ---
 
@@ -58,6 +59,48 @@ when uncertainty exists.
 | Security/privacy | Security/Risk |
 | Production critical change | Tech Lead + Developer |
 | Destructive operation | Tech Lead + rollback/backup plan |
+
+---
+
+## Initiative folder phases
+
+Application repositories should organize local initiative artifacts by phase:
+
+```text
+.cdad/initiatives/<initiative-id>/
+  00-flow-index.md
+  01-intake/
+  02-assessment/
+  03-design/
+  04-execution/
+  05-validation/
+  06-governance/
+  07-closure/
+```
+
+Official execution paths:
+
+```text
+04-execution/runtime-context.md
+04-execution/ai-execution-brief.md
+04-execution/relevant-files-list.md
+05-validation/validation-report.md
+06-governance/approval-record.md
+```
+
+---
+
+## Human Interaction Rule
+
+Human interaction happens primarily through chat or the active collaboration interface.
+
+Humans should not be required to manually edit AI-CDAD artifacts for routine clarification.
+
+When a human provides a clarification, decision or approval, the AI Execution Agent must record it in the appropriate artifact.
+
+For SAFE mode, approvals must be recorded in `06-governance/approval-record.md` with approver, decision, timestamp and conditions.
+
+If organizational policy requires approval outside chat, link the external approval evidence instead of copying sensitive content.
 
 ---
 
@@ -120,21 +163,22 @@ The AI Execution Agent must stop if it detects:
 ## Minimum artifact set for execution
 
 ```text
-runtime-context.md
-ai-execution-brief.md
-relevant-files-list.md
-validation-report.md
-pr-summary.md
+00-flow-index.md
+04-execution/runtime-context.md
+04-execution/ai-execution-brief.md
+04-execution/relevant-files-list.md
+05-validation/validation-report.md
+05-validation/pr-summary.md
 ```
 
 For SAFE mode, also require:
 
 ```text
-impact-analysis.md
-lean-sdd.md
-rollback-plan.md
-approval-record.md
-observability-checklist.md
+03-design/impact-analysis.md
+03-design/lean-sdd.md
+03-design/rollback-plan.md
+06-governance/approval-record.md
+05-validation/observability-checklist.md
 ```
 
 ---
@@ -151,7 +195,7 @@ integrations/skills/skill-registry.md
 Then it must follow the current:
 
 ```text
-ai-execution-brief.md
+04-execution/ai-execution-brief.md
 ```
 
 The brief must explicitly list:

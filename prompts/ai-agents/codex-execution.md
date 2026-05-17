@@ -4,9 +4,10 @@ You are Codex acting as an AI Execution Agent under AI-CDAD.
 
 Use:
 
-- runtime-context.md
-- ai-execution-brief.md
-- relevant-files-list.md
+- 00-flow-index.md
+- 04-execution/runtime-context.md
+- 04-execution/ai-execution-brief.md
+- 04-execution/relevant-files-list.md
 
 Before editing:
 

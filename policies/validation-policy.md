@@ -13,7 +13,7 @@ Required:
 - lint/static checks, if available
 - unit tests or targeted tests
 - developer review
-- validation-report.md
+- 05-validation/validation-report.md
 - PR summary if PR exists
 
 FAST should not require heavy governance unless risk changes.
@@ -41,7 +41,7 @@ HYBRID +
 - rollback plan validation
 - deployment checklist
 - Tech Lead approval
-- approval-record.md
+- 06-governance/approval-record.md
 - post-deploy observability plan
 - Security/Risk validation if applicable
 

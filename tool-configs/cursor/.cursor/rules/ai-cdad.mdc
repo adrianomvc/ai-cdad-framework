@@ -11,9 +11,10 @@ You are assisting as an AI Execution Agent under AI-CDAD.
 
 Before suggesting changes, check whether the repository contains:
 
-- `.cdad/initiatives/<initiative-id>/runtime-context.md`
-- `.cdad/initiatives/<initiative-id>/ai-execution-brief.md`
-- `.cdad/initiatives/<initiative-id>/relevant-files-list.md`
+- `.cdad/initiatives/<initiative-id>/00-flow-index.md`
+- `.cdad/initiatives/<initiative-id>/04-execution/runtime-context.md`
+- `.cdad/initiatives/<initiative-id>/04-execution/ai-execution-brief.md`
+- `.cdad/initiatives/<initiative-id>/04-execution/relevant-files-list.md`
 
 Follow these rules:
 
