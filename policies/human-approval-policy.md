@@ -82,4 +82,4 @@ approval-record.md
 
 ## Rule
 
-If approval is required but missing, Devin must stop.
+If approval is required but missing, the AI Execution Agent must stop.

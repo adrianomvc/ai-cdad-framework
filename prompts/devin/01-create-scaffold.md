@@ -10,7 +10,7 @@ Do not create empty placeholders.
 Mandatory rules:
 - Product Discovery Agent is external.
 - AI-CDAD governs.
-- AWS AI-DLC executes.
+- AI-DLC structures the lifecycle.
 - Devin is a guided orchestrator.
 - Developer owns execution.
 - Tech Lead owns architecture and risk.

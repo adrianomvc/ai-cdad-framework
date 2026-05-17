@@ -32,6 +32,7 @@ Rules:
    - normalized-entry.md
    - runtime-context.md
    - relevant-files-list.md
-   - devin-execution-brief.md, only after shaping is ready
+   - ai-execution-brief.md, only after shaping is ready
+   - devin-execution-brief.md, only when Devin-specific compatibility is required
 
 Before making changes, explain the plan and confirm assumptions.

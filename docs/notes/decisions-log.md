@@ -15,8 +15,8 @@ This document records the key design decisions behind AI-CDAD.
 ## 2. Positioning
 
 - AI-CDAD governs.
-- AWS AI-DLC executes.
-- Devin orchestrates under guidance.
+- AI-DLC structures the lifecycle.
+- AI Execution Agents execute under guidance.
 - Humans retain ownership.
 
 ---

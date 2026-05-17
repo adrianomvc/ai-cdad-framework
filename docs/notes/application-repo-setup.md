@@ -45,8 +45,9 @@ The application repo should reference the framework.
       relevant-files-list.md
       local-shaping-plan.md
       parallel-execution-plan.md
-      devin-execution-brief.md
-      local-validation-report.md
+      ai-execution-brief.md
+      devin-execution-brief.md, if using Devin-specific compatibility
+      validation-report.md
       implementation-notes.md
       pr-summary.md
 ```

@@ -14,7 +14,7 @@ AI may accelerate execution but cannot accept risk on behalf of humans.
 
 ## Hard Stops
 
-Devin must stop when any of the following is detected:
+AI Execution Agents must stop when any of the following is detected:
 
 1. production change
 2. API/data contract/schema/event change
@@ -33,7 +33,7 @@ Devin must stop when any of the following is detected:
 
 ## Hard Stop Behavior
 
-When a hard stop is triggered, Devin must:
+When a hard stop is triggered, the AI Execution Agent must:
 
 1. stop execution
 2. explain the risk

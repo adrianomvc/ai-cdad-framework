@@ -10,7 +10,7 @@ Reduce token usage without reducing trust or safety.
 
 ```text
 Repositories store rich memory.
-Devin sessions use minimal runtime context.
+AI execution sessions use minimal runtime context.
 ```
 
 The session must load the smallest sufficient context for the current phase.
@@ -62,7 +62,7 @@ Never remove these items to save tokens:
 ### Must Load
 
 - `runtime-context.md`
-- `devin-execution-brief.md`
+- `ai-execution-brief.md`
 - `local-shaping-plan.md`, if execution
 - `runtime-policy-summary.md`, if available
 - relevant files identified in `relevant-files-list.md`
@@ -103,7 +103,7 @@ Open full artifacts only if required by risk, ambiguity, hard stop or human requ
 
 ## Relevant Files First
 
-Before reading many code files, Devin must create or update:
+Before reading many code files, the AI Execution Agent must create or update:
 
 ```text
 relevant-files-list.md
@@ -125,7 +125,7 @@ It must classify files as:
 | HYBRID | 50k | 100k |
 | SAFE | 100k | 180k |
 
-If estimated context exceeds the maximum, Devin must create:
+If estimated context exceeds the maximum, the AI Execution Agent must create:
 
 ```text
 context-reduction-plan.md
@@ -151,4 +151,4 @@ before continuing.
 
 Reducing context must never remove safety-relevant information.
 
-If minimization creates uncertainty, Devin must stop and ask for the minimum missing context.
+If minimization creates uncertainty, the AI Execution Agent must stop and ask for the minimum missing context.

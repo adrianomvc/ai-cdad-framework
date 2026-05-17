@@ -86,13 +86,13 @@ Minimum:
 
 ---
 
-## Ready for Devin Execution
+## Ready for AI Execution
 
 Minimum:
 
 - `runtime-context.md`
 - `local-shaping-plan.md` or equivalent
-- `devin-execution-brief.md`
+- `ai-execution-brief.md`
 - risk mode
 - developer owner
 - scope
@@ -146,7 +146,7 @@ SAFE:
 
 ## Missing Context Rule
 
-If not ready, Devin must stop and say:
+If not ready, the AI Execution Agent must stop and say:
 
 ```text
 I cannot continue safely because <missing context> is missing.
