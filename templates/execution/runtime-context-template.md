@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This is the primary context loaded into the Devin session.
+This is the primary context loaded into the AI execution session.
 
 It must be concise, evidence-based and sufficient for the current phase.
 
@@ -11,6 +11,16 @@ It must be concise, evidence-based and sufficient for the current phase.
 ## Goal
 
 What must be achieved in this execution.
+
+---
+
+## Language and Locale
+
+- Preferred human-facing language:
+- Inferred from:
+- Use Portuguese Brazilian (`pt-BR`) by default when the user communicates in Portuguese.
+- Keep code, commands, filenames, logs, stack traces, API names and existing technical terms in their original language.
+- Ask one short clarification question if the language preference is unclear or conflicting.
 
 ---
 

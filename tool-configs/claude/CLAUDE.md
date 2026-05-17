@@ -24,6 +24,13 @@ Before editing files:
 - Keep changes small and explainable.
 - Run or recommend tests required by the execution brief.
 
+## Language and Locale
+
+- Infer the human-facing language from the user's request, existing artifacts and repository/team conventions.
+- If the user communicates in Portuguese, use Portuguese Brazilian (`pt-BR`) by default.
+- Keep code, commands, filenames, logs, stack traces, API names and existing technical terms in their original language.
+- If the language preference is unclear or conflicting, ask one short clarification question before creating human-facing artifacts.
+
 ## AI-CDAD Status Update
 
 Every meaningful step should include:

@@ -12,6 +12,8 @@ Before implementing code, check for the current initiative context:
 - ai-execution-brief.md
 - relevant-files-list.md
 
+Infer the human-facing language from the user's request, existing artifacts and repository/team conventions. If the user communicates in Portuguese, use Portuguese Brazilian (`pt-BR`) by default.
+
 If these are missing, ask for the minimum context needed before making broad suggestions.
 
 Stop on:

@@ -249,6 +249,34 @@ High | Medium | Low
 
 ---
 
+## Language and Locale
+
+AI Execution Agents must infer the human-facing language from the user's request, existing artifacts and repository/team conventions.
+
+If the user communicates in Portuguese, the agent must use Portuguese Brazilian (`pt-BR`) by default for human-facing interactions, including:
+
+- questions
+- status updates
+- summaries
+- validation reports
+- human action requests
+
+Use English when it is part of the technical surface, including:
+
+- code
+- commands
+- filenames
+- logs
+- stack traces
+- API names
+- tool/framework names
+- existing repository terminology
+- commit messages, unless the team convention says otherwise
+
+If the language preference is unclear or conflicting, ask one short clarification question before creating human-facing artifacts.
+
+---
+
 ## Tool-Agnostic AI Execution
 
 AI-CDAD must be AI Execution Agent agnostic.

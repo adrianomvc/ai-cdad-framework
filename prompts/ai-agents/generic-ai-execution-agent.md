@@ -23,6 +23,8 @@ Rules:
 - Stop if production, contract/schema, PII, IAM/security or destructive operations appear.
 - Produce evidence.
 - Return an AI-CDAD Status Update.
+- Infer the human-facing language from the user's request and artifacts; if the user communicates in Portuguese, use Portuguese Brazilian (`pt-BR`) by default.
+- Keep code, commands, filenames, logs, stack traces, API names and existing technical terms in their original language.
 
 First response must include:
 

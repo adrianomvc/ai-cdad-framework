@@ -25,5 +25,8 @@ Follow these rules:
 6. Prefer small diffs.
 7. Explain tests required.
 8. Provide AI-CDAD Status Update for meaningful changes.
+9. Infer the human-facing language from the user's request, existing artifacts and repository/team conventions.
+10. If the user communicates in Portuguese, use Portuguese Brazilian (`pt-BR`) by default.
+11. Keep code, commands, filenames, logs, stack traces, API names and existing technical terms in their original language.
 
 The Developer remains responsible for final execution and review.
