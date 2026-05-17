@@ -19,8 +19,8 @@ It is designed to help teams use AI tools such as **Devin** safely and effective
 ## Positioning
 
 > **AI-CDAD governs.**  
-> **AWS AI-DLC executes.**  
-> **Devin orchestrates under guidance.**  
+> **AI-DLC structures the lifecycle.**  
+> **AI Execution Agents execute under guidance.**  
 > **Humans retain ownership.**
 
 AI-CDAD is not a coding agent.
@@ -73,7 +73,7 @@ AI-CDAD solves this by introducing:
    Low-risk work should be fast. Brownfield critical work should be safe.
 
 4. **Minimal runtime context**  
-   Repositories store rich memory. Devin sessions load only what is needed.
+   Repositories store rich memory. AI execution sessions load only what is needed.
 
 5. **Evidence-based trust**  
    Runtime summaries must reference evidence, not rely on unsupported assumptions.
@@ -81,14 +81,14 @@ AI-CDAD solves this by introducing:
 6. **Safe default**  
    If relevant uncertainty exists, increase rigor: FAST → HYBRID → SAFE.
 
-7. **Devin is guided, not free-running**  
-   Devin executes within AI-CDAD policies, playbooks, gates and stop conditions.
+7. **AI Execution Agents are guided, not free-running**  
+   AI Execution Agents execute within AI-CDAD policies, playbooks, gates and stop conditions.
 
 ---
 
 ## Relationship with AWS AI-DLC
 
-AI-CDAD integrates with **AWS AI-DLC** as the execution engine.
+AI-CDAD can integrate with **AWS AI-DLC** as the delivery lifecycle structure.
 
 AI-CDAD defines:
 
@@ -98,9 +98,9 @@ AI-CDAD defines:
 - which artifacts are required
 - which humans must approve
 - which context is loaded
-- when Devin must stop
+- when an AI agent must stop
 
-AWS AI-DLC supports execution phases such as:
+AI-DLC supports execution phases such as:
 
 - Discover
 - Design
@@ -526,8 +526,9 @@ repo-da-aplicacao/
         local-design.md
         local-shaping-plan.md
         parallel-execution-plan.md
+        ai-execution-brief.md
         devin-execution-brief.md
-        local-validation-report.md
+        validation-report.md
         local-observability-checklist.md
         implementation-notes.md
         pr-summary.md
@@ -568,8 +569,9 @@ Examples:
 | initiative registry | central community repo |
 | repo impact index | central community repo |
 | runtime-context.md | application repo |
-| devin-execution-brief.md | application repo |
-| local-validation-report.md | application repo |
+| ai-execution-brief.md | application repo |
+| devin-execution-brief.md | application repo when using Devin-specific compatibility |
+| validation-report.md | application repo |
 | approval-record.md | hub or local, depending on scope |
 | initiative-summary.md | hub when archived |
 
@@ -583,7 +585,7 @@ Main principle:
 
 ```text
 Repositories store rich memory.
-Devin sessions use minimal runtime context.
+AI execution sessions use minimal runtime context.
 ```
 
 The primary runtime artifact is:
@@ -626,7 +628,7 @@ Target: up to 100k tokens
 Max: 180k tokens
 ```
 
-If context exceeds the budget, Devin must generate:
+If context exceeds the budget, the AI Execution Agent must generate:
 
 ```text
 context-reduction-plan.md
@@ -654,7 +656,7 @@ Even when minimizing context, never remove:
 
 ## Governance hard stops
 
-Devin must stop and request human approval when detecting:
+AI Execution Agents must stop and request human approval when detecting:
 
 - production change
 - API/data contract/schema/event change

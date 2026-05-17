@@ -8,7 +8,7 @@ Use this folder only for:
 
 - local initiatives
 - runtime-context.md
-- devin-execution-brief.md
+- ai-execution-brief.md
 - local validation evidence
 - implementation notes
 - PR summaries

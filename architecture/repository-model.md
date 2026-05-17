@@ -203,7 +203,7 @@ repo-da-aplicacao/
         parallel-execution-plan.md
         ai-execution-brief.md
         devin-execution-brief.md
-        local-validation-report.md
+        validation-report.md
         local-observability-checklist.md
         implementation-notes.md
         pr-summary.md
@@ -214,10 +214,10 @@ What belongs here:
 
 - runtime-context.md
 - ai-execution-brief.md
-        devin-execution-brief.md
+- devin-execution-brief.md, when using Devin-specific compatibility
 - local shaping plan
 - relevant files list
-- local validation report
+- validation report
 - implementation notes
 - PR summary
 - local evidence
@@ -309,7 +309,7 @@ repo-customer-service-api/
         local-shaping-plan.md
         ai-execution-brief.md
         devin-execution-brief.md
-        local-validation-report.md
+        validation-report.md
         implementation-notes.md
         pr-summary.md
 ```

@@ -410,12 +410,12 @@ Contains local AI-CDAD execution artifacts:
   README.md
   framework-ref.md
   initiatives/
-    <initiative-id>/
-      runtime-context.md
-      ai-execution-brief.md
-      local-validation-report.md
-      implementation-notes.md
-      pr-summary.md
+      <initiative-id>/
+        runtime-context.md
+        ai-execution-brief.md
+        validation-report.md
+        implementation-notes.md
+        pr-summary.md
 ```
 
 Purpose:
@@ -440,7 +440,7 @@ Do not duplicate everything everywhere.
 | runtime-context.md | application repository |
 | ai-execution-brief.md | application repository |
 | devin-execution-brief.md | application repository when using Devin |
-| local-validation-report.md | application repository |
+| validation-report.md | application repository |
 | approval-record.md | hub or local, depending on scope |
 | initiative-summary.md | hub when archived |
 

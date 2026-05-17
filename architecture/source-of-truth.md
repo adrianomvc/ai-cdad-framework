@@ -28,8 +28,8 @@ Portuguese interpretation:
 
 ```text
 AI-CDAD governs.
-AWS AI-DLC executes.
-Devin orchestrates under guidance.
+AI-DLC structures the lifecycle.
+AI Execution Agents execute under guidance.
 Humans retain ownership.
 ```
 
@@ -45,7 +45,7 @@ AI-CDAD is an operating model, not a coding bot.
 4. Minimal runtime context.
 5. Evidence-based trust.
 6. Safe default: FAST → HYBRID → SAFE when uncertainty exists.
-7. Devin is guided, not free-running.
+7. AI Execution Agents are guided, not free-running.
 8. Developer remains an AI-Augmented Engineer, not a prompt operator.
 9. Tech Lead owns architectural risk.
 10. Product Discovery Agent remains external.
@@ -89,9 +89,9 @@ Owns:
 - tests
 - PR readiness
 - code quality
-- Devin steering
+- AI-agent steering
 
-### Devin / AI
+### AI Execution Agent
 
 Accelerates:
 
@@ -163,8 +163,8 @@ Official community/domain memory:
 Local execution near code:
 
 - `.cdad/initiatives/<initiative-id>/runtime-context.md`
-- `.cdad/initiatives/<initiative-id>/devin-execution-brief.md`
-- `.cdad/initiatives/<initiative-id>/local-validation-report.md`
+- `.cdad/initiatives/<initiative-id>/ai-execution-brief.md`
+- `.cdad/initiatives/<initiative-id>/validation-report.md`
 
 ---
 
@@ -182,7 +182,7 @@ Artifact becomes official.
 
 ```text
 Repos store rich memory.
-Devin sessions use minimal runtime context.
+AI execution sessions use minimal runtime context.
 ```
 
 Primary runtime artifact:
@@ -207,7 +207,7 @@ Never remove to save tokens:
 
 ## Hard Stops
 
-Devin must stop for:
+AI Execution Agents must stop for:
 
 - production change
 - API/data contract/schema/event change
@@ -223,7 +223,7 @@ Devin must stop for:
 
 ## Status UX
 
-Every meaningful Devin action must produce:
+Every meaningful AI Execution Agent action must produce:
 
 ```markdown
 ## AI-CDAD Status Update
