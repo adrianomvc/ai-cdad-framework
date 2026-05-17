@@ -1,0 +1,13 @@
+# AI-CDAD Codex project configuration template
+# Copy to .codex/config.toml only after reviewing Codex documentation and your local security policy.
+
+project_doc_fallback_filenames = ["AGENTS.md", "CLAUDE.md", "GEMINI.md", "AI-CDAD.md"]
+project_doc_max_bytes = 65536
+
+# Example defaults. Adjust to your organization policy.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[agents.ai_cdad_reviewer]
+description = "Reviews work against AI-CDAD runtime context, execution brief, hard stops and validation requirements."
+config_file = "AGENTS.md"

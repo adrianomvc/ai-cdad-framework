@@ -18,19 +18,19 @@ Product Discovery Agent
 
 ```json
 {
-  "Itaú / Itau": {
+  "Organization / Organization": {
     "count": 0,
     "files": []
   },
-  "Atendimento Assistido": {
+  "AI Delivery Community": {
     "count": 0,
     "files": []
   },
-  "Adriano": {
+  "Maintainer": {
     "count": 0,
     "files": []
   },
-  "Comunidade Atendimento": {
+  "AI Delivery Community": {
     "count": 0,
     "files": []
   },
@@ -38,7 +38,7 @@ Product Discovery Agent
     "count": 0,
     "files": []
   },
-  "JIP": {
+  "Product Discovery Agent": {
     "count": 0,
     "files": []
   }
@@ -49,12 +49,12 @@ Product Discovery Agent
 
 ```json
 {
-  "Itaú / Itau": [],
-  "Atendimento Assistido": [],
-  "Adriano": [],
-  "Comunidade Atendimento": [],
+  "Organization / Organization": [],
+  "AI Delivery Community": [],
+  "Maintainer": [],
+  "AI Delivery Community": [],
   "Internal-ish examples": [],
-  "JIP": []
+  "Product Discovery Agent": []
 }
 ```
 

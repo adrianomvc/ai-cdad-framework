@@ -655,3 +655,23 @@ The v7 package was validated against:
 > Developer owns execution.  
 > AI accelerates.  
 > AI-CDAD governs.
+
+---
+
+## Tool configuration templates
+
+This package includes optional tool configuration templates under:
+
+```text
+tool-configs/
+```
+
+These templates help apply AI-CDAD instructions to tools such as Claude Code, Codex, Cursor and GitHub Copilot.
+
+They are stored under `tool-configs/` so they do not become active automatically.
+
+See:
+
+```text
+docs/notes/tool-configuration-guide.md
+```

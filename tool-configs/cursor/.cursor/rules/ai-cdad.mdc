@@ -1,0 +1,29 @@
+---
+description: AI-CDAD execution rules for Cursor Agent
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# AI-CDAD Cursor Rule
+
+You are assisting as an AI Execution Agent under AI-CDAD.
+
+Before suggesting changes, check whether the repository contains:
+
+- `.cdad/initiatives/<initiative-id>/runtime-context.md`
+- `.cdad/initiatives/<initiative-id>/ai-execution-brief.md`
+- `.cdad/initiatives/<initiative-id>/relevant-files-list.md`
+
+Follow these rules:
+
+1. Respect scope and out of scope.
+2. Do not modify blocked files.
+3. Do not bypass hard stops.
+4. Ask the Developer before broad edits.
+5. Stop if API/schema/contract, PII, IAM/security, production or destructive changes appear.
+6. Prefer small diffs.
+7. Explain tests required.
+8. Provide AI-CDAD Status Update for meaningful changes.
+
+The Developer remains responsible for final execution and review.

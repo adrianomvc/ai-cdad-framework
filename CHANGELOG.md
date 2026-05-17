@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.11 — Tool Configuration Templates
+
+- Added optional tool configuration templates under `tool-configs/`.
+- Added generic `AGENTS.md` template.
+- Added Claude Code `CLAUDE.md` and `.claude/settings.json.template`.
+- Added Codex `AGENTS.md` and `.codex/config.toml.template`.
+- Added Cursor `.cursor/rules/ai-cdad.mdc`.
+- Added GitHub Copilot `.github/copilot-instructions.md` and path-specific instructions.
+- Added `docs/notes/tool-configuration-guide.md`.
+- Kept templates inactive by storing them under `tool-configs/`.
+
+
 ## v0.10 — Public Sanitized Package Without Organization-Specific Product Agent Naming
 
 - Replaced all references to Product Discovery Agent / Product Discovery Agent with Product Discovery Agent.
