@@ -2,7 +2,7 @@
 
 ## Entry Lanes
 
-- Product: PM JIP - Brainstorm, negócio, feature, evolução.
+- Product: Product Discovery Agent, negócio, feature, evolução.
 - Operational: bug, incidente, hotfix, alerta.
 - Engineering: tech debt, refactor, upgrade, observability.
 - Compliance: security, audit, LGPD, CVE.

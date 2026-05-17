@@ -1,6 +1,6 @@
 # Operating Model
 
-## PM JIP - Brainstorm
+## Product Discovery Agent
 
 Responsável por discovery, inception, histórias, critérios de aceite, valor, prioridade e escopo de negócio.
 
@@ -31,3 +31,30 @@ Human-in-the-loop acontece em:
 - Hard stops
 - SAFE mode
 - Compliance/security
+
+---
+
+## AI Execution Agent
+
+AI-CDAD can be executed by multiple AI tools.
+
+Examples:
+
+- Devin
+- Claude Code
+- Codex
+- Cursor
+- GitHub Copilot
+- Amazon Q Developer
+- internal agents
+
+The execution agent must follow:
+
+- runtime-context.md
+- ai-execution-brief.md
+- policies
+- playbooks
+- human approval gates
+- stop conditions
+
+Devin remains the first supported implementation.

@@ -1,46 +1,37 @@
-# hybrid-example
+# HYBRID Example
 
 ## Scenario
 
-Describe the scenario.
+Create a new atendimento capability integrated with an existing internal service.
 
 ## Entry Lane
 
-TBD.
+Product.
 
 ## Risk Mode
 
-TBD.
+HYBRID.
 
 ## Expected Artifacts
 
 - normalized-entry.md
 - delivery-assessment.md
+- technical-context-pack.md
+- impact-analysis.md
+- lean-sdd.md
+- local-shaping-plan.md
 - runtime-context.md
 - devin-execution-brief.md
 - validation-report.md
 
 ## Human Approvals
 
-TBD.
+- Tech Lead review selective.
+- Developer feasibility mandatory.
 
 ## Devin Behavior
 
-TBD.
-
-## Validation Gates
-
-TBD.
-
-## Status Update Example
-
-```markdown
-## CDAD Status Update
-
-Current Stage:
-Created/Updated Artifacts:
-Human Action Required:
-Blocking Issues:
-Next Step:
-Confidence:
-```
+- Use curated context.
+- Avoid loading unrelated product history.
+- Prepare integration tests.
+- Validate observability readiness.

@@ -2,15 +2,153 @@
 
 ## Purpose
 
-Define runtime-context.md, summaries, evidence references e scoped files para reduzir tokens sem perder segurança.
+Reduce token usage without reducing trust or safety.
 
-## Required Behavior
+---
 
-- Devin must follow this policy during AI-CDAD execution.
-- If this policy conflicts with speed, safety wins.
-- If context is insufficient, Devin must stop and ask only for the minimum missing context.
-- Human ownership must be preserved.
+## Core Principle
 
-## Evidence
+```text
+Repositories store rich memory.
+Devin sessions use minimal runtime context.
+```
 
-Relevant decisions must be recorded in the appropriate artifact.
+The session must load the smallest sufficient context for the current phase.
+
+---
+
+## Primary Runtime Artifact
+
+The main runtime artifact is:
+
+```text
+runtime-context.md
+```
+
+It must contain:
+
+- goal
+- scope
+- out of scope
+- risk mode
+- required gates
+- critical constraints
+- evidence references
+- stop conditions
+- human owners
+- validation requirements
+- relevant files
+
+---
+
+## Must Always Remain in Context
+
+Never remove these items to save tokens:
+
+- risk mode
+- scope
+- out of scope
+- hard stops
+- required gates
+- stop conditions
+- human owner
+- validation requirements
+- evidence references
+
+---
+
+## Load Strategy
+
+### Must Load
+
+- `runtime-context.md`
+- `devin-execution-brief.md`
+- `local-shaping-plan.md`, if execution
+- `runtime-policy-summary.md`, if available
+- relevant files identified in `relevant-files-list.md`
+
+### Load If Needed
+
+- full `lean-sdd.md`
+- full `impact-analysis.md`
+- full `technical-context-pack.md`
+- rollback plan
+- approval record
+- historical initiative summaries
+
+### Never Load By Default
+
+- full repository
+- archived initiatives
+- all policies
+- all playbooks
+- full product documentation
+- unrelated logs
+- unrelated code directories
+
+---
+
+## Summaries First
+
+For large artifacts, use summaries first:
+
+- `technical-context-summary.md`
+- `impact-analysis-summary.md`
+- `lean-sdd-summary.md`
+- `rollback-summary.md`
+
+Open full artifacts only if required by risk, ambiguity, hard stop or human request.
+
+---
+
+## Relevant Files First
+
+Before reading many code files, Devin must create or update:
+
+```text
+relevant-files-list.md
+```
+
+It must classify files as:
+
+- Must Inspect
+- Maybe Inspect
+- Do Not Inspect Yet
+
+---
+
+## Token Budgets
+
+| Mode | Target | Maximum |
+|---|---:|---:|
+| FAST | 20k | 40k |
+| HYBRID | 50k | 100k |
+| SAFE | 100k | 180k |
+
+If estimated context exceeds the maximum, Devin must create:
+
+```text
+context-reduction-plan.md
+```
+
+before continuing.
+
+---
+
+## Context Reduction Plan Must Include
+
+- current estimated context
+- reduction actions
+- artifacts replaced by summaries
+- files excluded
+- risks of reduction
+- remaining evidence references
+- approval needed, if any
+
+---
+
+## Safety Rule
+
+Reducing context must never remove safety-relevant information.
+
+If minimization creates uncertainty, Devin must stop and ask for the minimum missing context.

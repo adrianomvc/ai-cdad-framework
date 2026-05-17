@@ -1,46 +1,113 @@
-# local-bugfix-example
+# Local Bugfix Example
 
 ## Scenario
 
-Describe the scenario.
+A developer found a bug where `customer-service-api` returns HTTP 500 when `correlation_id` is null.
+
+## Human Input
+
+```text
+Temos um bug na aplicação customer-service-api.
+Repo principal: customer-service-api.
+Possível repo relacionado: customer-service-pipeline.
+Erro: HTTP 500 quando correlation_id vem nulo.
+Evidência: NullPointerException em CustomerCorrelationService.java.
+Impacto: homologação; produção ainda não confirmada.
+```
 
 ## Entry Lane
 
-TBD.
+Operational.
+
+## Triage
+
+Required.
+
+Questions:
+
+- Já ocorreu em produção?
+- O repo principal é `customer-service-api`?
+- Existe contrato/API/schema que não pode mudar?
 
 ## Risk Mode
 
-TBD.
+Initial recommendation:
 
-## Expected Artifacts
+```text
+FAST
+```
 
-- normalized-entry.md
-- delivery-assessment.md
-- runtime-context.md
-- devin-execution-brief.md
-- validation-report.md
+If production impact or contract/schema impact is confirmed:
+
+```text
+SAFE
+```
+
+## Expected Local Artifacts
+
+```text
+.cdad/initiatives/2026-045-fix-null-protocol-id/
+  initiative-ref.md
+  normalized-entry.md
+  triage-report.md
+  runtime-context.md
+  relevant-files-list.md
+  local-shaping-plan.md
+  devin-execution-brief.md
+  local-validation-report.md
+  implementation-notes.md
+  pr-summary.md
+```
 
 ## Human Approvals
 
-TBD.
+- Developer validates execution readiness.
+- Tech Lead only if contract/schema/production impact appears.
 
 ## Devin Behavior
 
-TBD.
+1. Create normalized-entry.md.
+2. Create triage-report.md.
+3. Inspect local repo context.
+4. Generate relevant-files-list.md.
+5. Check central hub indexes lightly.
+6. Generate runtime-context.md.
+7. Generate devin-execution-brief.md.
+8. Wait for developer feasibility confirmation.
+9. Implement fix and tests.
+10. Generate validation-report and PR summary.
 
-## Validation Gates
+## Stop Conditions
 
-TBD.
+Stop if:
 
-## Status Update Example
+- contract/schema is impacted
+- production criticality is confirmed
+- PII is involved
+- scope becomes unclear
+- tests indicate wider regression
+
+## AI-CDAD Status Update Example
 
 ```markdown
-## CDAD Status Update
+## AI-CDAD Status Update
 
-Current Stage:
-Created/Updated Artifacts:
-Human Action Required:
-Blocking Issues:
-Next Step:
-Confidence:
+**Current Stage:**  
+Developer Feasibility Gate
+
+**Created/Updated Artifacts:**  
+- `runtime-context.md` — `.cdad/initiatives/2026-045-fix-null-protocol-id/`
+- `devin-execution-brief.md` — `.cdad/initiatives/2026-045-fix-null-protocol-id/`
+
+**Human Action Required:**  
+Developer must confirm scope and allowed files.
+
+**Blocking Issues:**  
+Production impact not confirmed.
+
+**Next Step:**  
+After developer validation, start Devin execution.
+
+**Confidence:**  
+Medium
 ```

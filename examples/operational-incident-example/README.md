@@ -1,46 +1,49 @@
-# operational-incident-example
+# Operational Incident Example
 
 ## Scenario
 
-Describe the scenario.
+A production pipeline is failing and consumers are not receiving updated atendimento events.
 
 ## Entry Lane
 
-TBD.
+Operational.
 
 ## Risk Mode
 
-TBD.
+SAFE by default.
 
 ## Expected Artifacts
 
 - normalized-entry.md
+- triage-report.md
 - delivery-assessment.md
 - runtime-context.md
+- rollback-plan.md
 - devin-execution-brief.md
 - validation-report.md
+- observability-checklist.md
+- approval-record.md
+- initiative-summary.md
 
 ## Human Approvals
 
-TBD.
+- Dev on-call validates triage.
+- Tech Lead approves mitigation and rollback.
+- Security/Risk if sensitive data or regulatory impact exists.
 
 ## Devin Behavior
 
-TBD.
+- Organize incident context.
+- Identify affected components.
+- Generate mitigation plan.
+- Prepare safe execution brief.
+- Support fix or rollback.
+- Capture validation evidence.
+- Generate post-incident summary.
 
-## Validation Gates
+## Stop Conditions
 
-TBD.
-
-## Status Update Example
-
-```markdown
-## CDAD Status Update
-
-Current Stage:
-Created/Updated Artifacts:
-Human Action Required:
-Blocking Issues:
-Next Step:
-Confidence:
-```
+- destructive operation without approval
+- production deploy without rollback
+- unknown consumer impact
+- contract/schema uncertainty

@@ -2,15 +2,79 @@
 
 ## Purpose
 
-FAST: direto/canary simples. HYBRID: canary/feature flags. SAFE: blue-green/shadow/parallel run/rollback.
+Define deployment behavior by Risk Mode.
 
-## Required Behavior
+---
 
-- Devin must follow this policy during AI-CDAD execution.
-- If this policy conflicts with speed, safety wins.
-- If context is insufficient, Devin must stop and ask only for the minimum missing context.
-- Human ownership must be preserved.
+## FAST
 
-## Evidence
+Allowed strategies:
 
-Relevant decisions must be recorded in the appropriate artifact.
+- direct deploy
+- simple canary, optional
+- quick rollback
+
+Required:
+
+- validation report
+- developer review
+- PR/deploy record
+
+---
+
+## HYBRID
+
+Recommended strategies:
+
+- canary
+- feature flags
+- controlled rollout
+- staged enablement
+
+Required:
+
+- rollout plan
+- integration validation
+- observability readiness
+
+---
+
+## SAFE
+
+Recommended strategies:
+
+- blue/green
+- feature flags
+- shadow mode
+- parallel run
+- staged migration
+- controlled rollback window
+
+Required:
+
+- Tech Lead approval
+- rollback plan
+- deployment checklist
+- contract validation when applicable
+- regression validation
+- post-deploy monitoring plan
+
+---
+
+## Production Rule
+
+Any production deployment with unclear rollback or unclear owner is a hard stop.
+
+---
+
+## Post-deploy
+
+Observe:
+
+- errors
+- latency
+- logs
+- metrics
+- consumers
+- business impact
+- cost impact when relevant

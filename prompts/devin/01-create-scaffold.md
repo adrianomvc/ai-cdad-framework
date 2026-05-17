@@ -8,7 +8,7 @@ Populate every file with useful initial content.
 Do not create empty placeholders.
 
 Mandatory rules:
-- PM JIP - Brainstorm is external.
+- Product Discovery Agent is external.
 - AI-CDAD governs.
 - AWS AI-DLC executes.
 - Devin is a guided orchestrator.
@@ -23,3 +23,22 @@ Mandatory rules:
 - Definition of Ready must exist.
 - Definition of Done must exist.
 - parallel execution governance must exist.
+
+
+---
+
+## Source of Truth Rule
+
+README.md is the source of truth for the framework.
+
+If any file conflicts with README.md, architecture/source-of-truth.md or docs/notes/decisions-log.md, follow this priority:
+
+1. README.md
+2. architecture/source-of-truth.md
+3. docs/notes/decisions-log.md
+4. policies/
+5. playbooks/
+6. templates/
+7. examples/
+
+Do not contradict the source of truth.

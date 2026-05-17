@@ -9,7 +9,7 @@ AI-CDAD must support Greenfield, Brownfield, Hybrid, Bugs, Incidents, Hotfixes, 
 AI-CDAD integrates with AWS AI-DLC workflows as the execution engine.
 
 Important:
-The PM Agent already exists outside this framework and is called PM JIP - Brainstorm.
+The PM Agent already exists outside this framework and is called Product Discovery Agent.
 It runs in Microsoft Teams and is responsible for product discovery, inception, story creation, acceptance criteria and prioritization.
 
 Do not implement the PM Agent.
@@ -33,3 +33,22 @@ Before creating files, produce an implementation plan with:
 9. how Devin will behave as guided orchestrator
 
 Do not create files yet.
+
+
+---
+
+## Source of Truth Rule
+
+README.md is the source of truth for the framework.
+
+If any file conflicts with README.md, architecture/source-of-truth.md or docs/notes/decisions-log.md, follow this priority:
+
+1. README.md
+2. architecture/source-of-truth.md
+3. docs/notes/decisions-log.md
+4. policies/
+5. playbooks/
+6. templates/
+7. examples/
+
+Do not contradict the source of truth.

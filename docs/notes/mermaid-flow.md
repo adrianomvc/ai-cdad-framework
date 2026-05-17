@@ -3,7 +3,7 @@
 ```mermaid
 flowchart TD
     A[Entrada da demanda] --> B{Entry Lane}
-    B --> P[Product Lane<br/>PM JIP - Brainstorm]
+    B --> P[Product Lane<br/>Product Discovery Agent]
     B --> O[Operational Lane<br/>Bug / Incidente / Hotfix]
     B --> E[Engineering Lane<br/>Tech debt / Refactor / Upgrade]
     B --> C[Compliance Lane<br/>Security / Audit / LGPD]

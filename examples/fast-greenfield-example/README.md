@@ -1,46 +1,40 @@
-# fast-greenfield-example
+# FAST Greenfield Example
 
 ## Scenario
 
-Describe the scenario.
+Create a new isolated internal utility with no production criticality and no external consumers.
 
 ## Entry Lane
 
-TBD.
+Product or Engineering.
 
 ## Risk Mode
 
-TBD.
+FAST.
 
 ## Expected Artifacts
 
 - normalized-entry.md
 - delivery-assessment.md
 - runtime-context.md
+- local-shaping-plan.md
 - devin-execution-brief.md
 - validation-report.md
+- pr-summary.md
 
 ## Human Approvals
 
-TBD.
+- Developer review.
 
 ## Devin Behavior
 
-TBD.
+- Keep context minimal.
+- Use developer core + FAST overlay.
+- Generate tests and PR summary.
+- Do not create heavy SDD unless risk changes.
 
-## Validation Gates
+## Stop Conditions
 
-TBD.
-
-## Status Update Example
-
-```markdown
-## CDAD Status Update
-
-Current Stage:
-Created/Updated Artifacts:
-Human Action Required:
-Blocking Issues:
-Next Step:
-Confidence:
-```
+- external consumer discovered
+- contract/schema impact discovered
+- production risk discovered
