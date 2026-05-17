@@ -22,7 +22,7 @@ The session must load the smallest sufficient context for the current phase.
 The main runtime artifact is:
 
 ```text
-runtime-context.md
+04-execution/runtime-context.md
 ```
 
 It must contain:
@@ -61,11 +61,12 @@ Never remove these items to save tokens:
 
 ### Must Load
 
-- `runtime-context.md`
-- `ai-execution-brief.md`
-- `local-shaping-plan.md`, if execution
+- `00-flow-index.md`
+- `04-execution/runtime-context.md`
+- `04-execution/ai-execution-brief.md`
+- `03-design/local-shaping-plan.md`, if execution
 - `runtime-policy-summary.md`, if available
-- relevant files identified in `relevant-files-list.md`
+- relevant files identified in `04-execution/relevant-files-list.md`
 
 ### Load If Needed
 
@@ -106,7 +107,7 @@ Open full artifacts only if required by risk, ambiguity, hard stop or human requ
 Before reading many code files, the AI Execution Agent must create or update:
 
 ```text
-relevant-files-list.md
+04-execution/relevant-files-list.md
 ```
 
 It must classify files as:

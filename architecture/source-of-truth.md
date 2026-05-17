@@ -162,9 +162,10 @@ Official community/domain memory:
 
 Local execution near code:
 
-- `.cdad/initiatives/<initiative-id>/runtime-context.md`
-- `.cdad/initiatives/<initiative-id>/ai-execution-brief.md`
-- `.cdad/initiatives/<initiative-id>/validation-report.md`
+- `.cdad/initiatives/<initiative-id>/00-flow-index.md`
+- `.cdad/initiatives/<initiative-id>/04-execution/runtime-context.md`
+- `.cdad/initiatives/<initiative-id>/04-execution/ai-execution-brief.md`
+- `.cdad/initiatives/<initiative-id>/05-validation/validation-report.md`
 
 ---
 
@@ -178,6 +179,24 @@ Artifact becomes official.
 
 ---
 
+## Human Interaction Rule
+
+Human interaction happens primarily through chat or the active collaboration interface.
+
+Humans should not be required to manually edit AI-CDAD artifacts for routine clarification.
+
+When a human provides a clarification, decision or approval, the AI Execution Agent must record it in the appropriate artifact.
+
+For SAFE mode, approvals must be recorded in:
+
+```text
+06-governance/approval-record.md
+```
+
+If organizational policy requires approval outside chat, link the external approval evidence instead of copying sensitive content.
+
+---
+
 ## Context Rule
 
 ```text
@@ -188,7 +207,7 @@ AI execution sessions use minimal runtime context.
 Primary runtime artifact:
 
 ```text
-runtime-context.md
+04-execution/runtime-context.md
 ```
 
 Never remove to save tokens:
@@ -298,20 +317,20 @@ Supported execution agents may include:
 The generic execution artifact is:
 
 ```text
-ai-execution-brief.md
+04-execution/ai-execution-brief.md
 ```
 
 For Devin compatibility, this may be named:
 
 ```text
-devin-execution-brief.md
+04-execution/devin-execution-brief.md
 ```
 
 Both names refer to the same execution contract.
 
 Every AI Execution Agent must obey:
 
-- runtime-context.md
+- 04-execution/runtime-context.md
 - execution brief
 - policies
 - playbooks

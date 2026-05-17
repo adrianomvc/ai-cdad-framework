@@ -28,8 +28,9 @@ AI creates drafts and asks for validation only when necessary.
 | domain/product context | central community repo |
 | cross-repo initiative artifacts | central community repo |
 | local execution artifacts | application repo |
-| runtime-context.md | application repo |
-| ai-execution-brief.md | application repo |
+| 00-flow-index.md | application repo |
+| 04-execution/runtime-context.md | application repo |
+| 04-execution/ai-execution-brief.md | application repo |
 | local validation evidence | application repo |
 | archived summary | central community repo |
 
@@ -46,12 +47,13 @@ AI creates drafts and asks for validation only when necessary.
 | technical-context-pack.md | Tech Lead Design Agent | Tech Lead |
 | impact-analysis.md | Tech Lead Design Agent | Tech Lead |
 | lean-sdd.md | Tech Lead Design Agent | Tech Lead |
-| runtime-context.md | AI Execution Agent | Developer |
-| local-shaping-plan.md | Shaping Agent | Developer |
-| ai-execution-brief.md | AI Execution Agent | Developer |
-| validation-report.md | Validation Agent | Developer |
-| approval-record.md | AI Execution Agent | approver |
-| rollback-plan.md | AI Execution Agent / Tech Lead Agent | Tech Lead |
+| 00-flow-index.md | AI Execution Agent | Developer |
+| 04-execution/runtime-context.md | AI Execution Agent | Developer |
+| 03-design/local-shaping-plan.md | Shaping Agent | Developer |
+| 04-execution/ai-execution-brief.md | AI Execution Agent | Developer |
+| 05-validation/validation-report.md | Validation Agent | Developer |
+| 06-governance/approval-record.md | AI Execution Agent | approver |
+| 03-design/rollback-plan.md | AI Execution Agent / Tech Lead Agent | Tech Lead |
 | initiative-summary.md | Knowledge Update Agent | Dev/TL depending on risk |
 
 ---

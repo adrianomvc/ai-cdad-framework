@@ -37,7 +37,7 @@ Approvals may happen in:
 Critical approvals must be recorded in:
 
 ```text
-approval-record.md
+06-governance/approval-record.md
 ```
 
 ---

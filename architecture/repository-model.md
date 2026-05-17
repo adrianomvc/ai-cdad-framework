@@ -191,37 +191,61 @@ repo-da-aplicacao/
 
     initiatives/
       <initiative-id>/
-        initiative-ref.md
-        normalized-entry.md
-        triage-report.md
-        runtime-context.md
-        relevant-files-list.md
-        local-technical-context.md
-        local-impact-analysis.md
-        local-design.md
-        local-shaping-plan.md
-        parallel-execution-plan.md
-        ai-execution-brief.md
-        devin-execution-brief.md
-        validation-report.md
-        local-observability-checklist.md
-        implementation-notes.md
-        pr-summary.md
-        cdad-exception-report.md
+        00-flow-index.md
+
+        01-intake/
+          initiative-ref.md
+          normalized-entry.md
+          triage-report.md
+
+        02-assessment/
+          delivery-assessment.md
+          impact-mapping.md
+
+        03-design/
+          local-technical-context.md
+          local-impact-analysis.md
+          local-design.md
+          local-shaping-plan.md
+          parallel-execution-plan.md
+          rollback-plan.md
+          rollout-plan.md
+
+        04-execution/
+          runtime-context.md
+          relevant-files-list.md
+          ai-execution-brief.md
+          devin-execution-brief.md
+          implementation-notes.md
+
+        05-validation/
+          validation-report.md
+          local-observability-checklist.md
+          pr-summary.md
+
+        06-governance/
+          approval-record.md
+          governance-hard-stop.md
+          cdad-exception-report.md
+
+        07-closure/
+          initiative-summary.md
 ```
 
 What belongs here:
 
-- runtime-context.md
-- ai-execution-brief.md
-- devin-execution-brief.md, when using Devin-specific compatibility
-- local shaping plan
-- relevant files list
-- validation report
-- implementation notes
-- PR summary
+- 00-flow-index.md
+- phased local execution artifacts
+- 04-execution/runtime-context.md
+- 04-execution/ai-execution-brief.md
+- 04-execution/devin-execution-brief.md, when using Devin-specific compatibility
+- 03-design/local-shaping-plan.md
+- 04-execution/relevant-files-list.md
+- 05-validation/validation-report.md
+- 04-execution/implementation-notes.md
+- 05-validation/pr-summary.md
 - local evidence
-- local exception report
+- 06-governance/local exception report
 
 What does **not** belong here:
 
@@ -239,7 +263,8 @@ What does **not** belong here:
 Each local initiative must include:
 
 ```text
-.cdad/initiatives/<initiative-id>/initiative-ref.md
+.cdad/initiatives/<initiative-id>/00-flow-index.md
+.cdad/initiatives/<initiative-id>/01-intake/initiative-ref.md
 ```
 
 Example:
@@ -301,17 +326,22 @@ repo-customer-service-api/
   .cdad/
     initiatives/
       2026-045-fix-null-protocol-id/
-        initiative-ref.md
-        normalized-entry.md
-        triage-report.md
-        runtime-context.md
-        relevant-files-list.md
-        local-shaping-plan.md
-        ai-execution-brief.md
-        devin-execution-brief.md
-        validation-report.md
-        implementation-notes.md
-        pr-summary.md
+        00-flow-index.md
+        01-intake/
+          initiative-ref.md
+          normalized-entry.md
+          triage-report.md
+        03-design/
+          local-shaping-plan.md
+        04-execution/
+          runtime-context.md
+          relevant-files-list.md
+          ai-execution-brief.md
+          devin-execution-brief.md
+          implementation-notes.md
+        05-validation/
+          validation-report.md
+          pr-summary.md
 ```
 
 The central hub should be updated only if needed for:

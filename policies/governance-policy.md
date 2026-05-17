@@ -90,11 +90,11 @@ When a hard stop is triggered, the AI Execution Agent must:
 Every critical decision must be recorded in:
 
 ```text
-approval-record.md
+06-governance/approval-record.md
 ```
 
 or, for exceptions:
 
 ```text
-cdad-exception-report.md
+06-governance/cdad-exception-report.md
 ```

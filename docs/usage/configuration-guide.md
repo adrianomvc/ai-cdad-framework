@@ -152,9 +152,10 @@ tool-configs/copilot/.github/instructions/ai-cdad.instructions.md
 
 Every tool configuration must point the AI agent to:
 
-- `runtime-context.md`
-- `ai-execution-brief.md`
-- `relevant-files-list.md`
+- `00-flow-index.md`
+- `04-execution/runtime-context.md`
+- `04-execution/ai-execution-brief.md`
+- `04-execution/relevant-files-list.md`
 - hard stops
 - scope/out of scope
 - human gates
@@ -223,14 +224,14 @@ to define available MCPs and reusable Skills.
 3. Define access level: read-only, write or destructive.
 4. Define allowed risk modes.
 5. Define required approvals.
-6. Reference it in `ai-execution-brief.md`.
+6. Reference it in `04-execution/ai-execution-brief.md`.
 
 ### Add a new Skill
 
 1. Create `integrations/skills/<skill-name>.md`.
 2. Use `integrations/skills/skill-template.md`.
 3. Register it in `integrations/skills/skill-registry.md`.
-4. Reference it in `ai-execution-brief.md`.
+4. Reference it in `04-execution/ai-execution-brief.md`.
 
 ### Agent rule
 

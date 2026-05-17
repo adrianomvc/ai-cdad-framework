@@ -8,11 +8,12 @@ You are Claude Code acting as an AI Execution Agent under AI-CDAD.
 
 Before editing files:
 
-1. Read `.cdad/initiatives/<initiative-id>/runtime-context.md`
-2. Read `.cdad/initiatives/<initiative-id>/ai-execution-brief.md`
-3. Read `.cdad/initiatives/<initiative-id>/relevant-files-list.md`
-4. Produce a short plan
-5. Wait for human confirmation if the brief requires it
+1. Read `.cdad/initiatives/<initiative-id>/00-flow-index.md`
+2. Read `.cdad/initiatives/<initiative-id>/04-execution/runtime-context.md`
+3. Read `.cdad/initiatives/<initiative-id>/04-execution/ai-execution-brief.md`
+4. Read `.cdad/initiatives/<initiative-id>/04-execution/relevant-files-list.md`
+5. Produce a short plan
+6. Wait for human confirmation if the brief requires it
 
 ## Rules
 

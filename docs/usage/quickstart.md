@@ -54,17 +54,36 @@ Use these templates:
 templates/application-repo/cdad-readme-template.md
 templates/application-repo/framework-ref-template.md
 templates/application-repo/initiative-ref-template.md
+templates/application-repo/flow-index-template.md
 ```
 
 For a new initiative, create:
 
 ```text
 .cdad/initiatives/<initiative-id>/
-  initiative-ref.md
-  normalized-entry.md
-  runtime-context.md
-  relevant-files-list.md
-  ai-execution-brief.md
+  00-flow-index.md
+
+  01-intake/
+    initiative-ref.md
+    normalized-entry.md
+    triage-report.md
+
+  02-assessment/
+    delivery-assessment.md
+
+  03-design/
+
+  04-execution/
+    runtime-context.md
+    relevant-files-list.md
+    ai-execution-brief.md
+
+  05-validation/
+    validation-report.md
+
+  06-governance/
+
+  07-closure/
 ```
 
 If using Devin specifically, you may also use:
@@ -115,19 +134,21 @@ Do not activate all configurations blindly.
 For any AI Execution Agent:
 
 ```text
-runtime-context.md
+00-flow-index.md
 ↓
-ai-execution-brief.md
+04-execution/runtime-context.md
 ↓
-relevant-files-list.md
+04-execution/ai-execution-brief.md
+↓
+04-execution/relevant-files-list.md
 ↓
 AI agent execution
 ↓
-validation-report.md
+05-validation/validation-report.md
 ↓
-pr-summary.md
+05-validation/pr-summary.md
 ↓
-initiative-summary.md
+07-closure/initiative-summary.md
 ```
 
 ---

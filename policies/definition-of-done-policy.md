@@ -35,10 +35,10 @@ Required:
 
 - implementation complete
 - minimal tests executed
-- `validation-report.md`
+- `05-validation/validation-report.md`
 - developer review
 - PR/deploy/resolution recorded
-- `pr-summary.md` if PR exists
+- `05-validation/pr-summary.md` if PR exists
 
 ---
 

@@ -50,10 +50,10 @@ Load:
 
 Load:
 
-- runtime-context.md
+- 04-execution/runtime-context.md
 - devin-execution-brief.md
 - local-shaping-plan.md
-- relevant-files-list.md
+- 04-execution/relevant-files-list.md
 - Developer playbook core + overlay for current mode
 - relevant source files only
 

@@ -26,12 +26,13 @@ What Devin should accomplish in this run.
 
 ## Required Inputs
 
-- runtime-context.md
-- local-shaping-plan.md
-- relevant-files-list.md
-- delivery-assessment.md
-- approval-record.md, if applicable
-- rollback-plan.md, if applicable
+- 00-flow-index.md
+- 04-execution/runtime-context.md
+- 03-design/local-shaping-plan.md
+- 04-execution/relevant-files-list.md
+- 02-assessment/delivery-assessment.md
+- 06-governance/approval-record.md, if applicable
+- 03-design/rollback-plan.md, if applicable
 
 ---
 
@@ -102,9 +103,9 @@ Stop if:
 - code changes
 - tests
 - PR draft
-- validation-report.md
-- pr-summary.md
-- implementation-notes.md
+- 05-validation/validation-report.md
+- 05-validation/pr-summary.md
+- 04-execution/implementation-notes.md
 
 ---
 
@@ -138,7 +139,7 @@ If something does not fit the brief, stop and ask for the minimum required human
 This is a Devin-specific version of the generic:
 
 ```text
-ai-execution-brief.md
+04-execution/ai-execution-brief.md
 ```
 
 Both artifacts must follow the same execution contract.
@@ -146,7 +147,7 @@ Both artifacts must follow the same execution contract.
 If AI-CDAD is used with another AI tool, prefer:
 
 ```text
-ai-execution-brief.md
+04-execution/ai-execution-brief.md
 ```
 
 
