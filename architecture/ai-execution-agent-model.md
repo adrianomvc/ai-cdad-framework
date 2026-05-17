@@ -91,3 +91,29 @@ The adapter must define:
 - how to enforce stop conditions
 - how to capture evidence
 - how to produce AI-CDAD Status Updates
+
+---
+
+## MCP and Skill Resolution
+
+AI Execution Agents must resolve MCPs and Skills from the framework structure.
+
+Default locations:
+
+```text
+integrations/mcp/mcp-registry.md
+integrations/skills/skill-registry.md
+```
+
+For each execution, the agent must read:
+
+```text
+runtime-context.md
+ai-execution-brief.md
+```
+
+The execution brief tells the agent which MCPs and Skills are allowed.
+
+If MCPs or Skills are not listed in the execution brief, the agent must not assume access.
+
+If a needed MCP or Skill is missing, the agent must stop and ask for the minimum required context or create a proposal under `integrations/`.

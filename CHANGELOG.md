@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.14 — MCP and Skills Registry
+
+- Added `integrations/mcp/`.
+- Added MCP registry, access levels, query plan template and technical context pack template.
+- Added MCP examples for GitHub and Observability.
+- Added `integrations/skills/`.
+- Added Skill registry, skill template and reusable skills.
+- Updated AI execution brief templates with MCP Access and Skills sections.
+- Added Devin prompt `11-add-mcp-or-skill.md`.
+- Updated README, AI Execution Agent model and usage docs.
+
+
+## v0.13 — Devin Setup Guide
+
+- Added `docs/usage/devin-setup-guide.md`.
+- Added `tool-configs/devin/devin-session-instructions.md`.
+- Clarified that Devin uses setup/indexing/session instructions rather than a root config file copied by default.
+- Added guidance for using AI-CDAD with Devin, including repo access, indexing, `.cdad/`, execution briefs, hard stops and PR behavior.
+
+
 ## v0.12 — Final Configuration and Usage Instructions
 
 - Added `docs/usage/quickstart.md`.

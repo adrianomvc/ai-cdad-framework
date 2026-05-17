@@ -139,3 +139,27 @@ If AI-CDAD is used with another AI tool, prefer:
 ```text
 ai-execution-brief.md
 ```
+
+
+---
+
+## MCP Access
+
+Use the generic AI execution brief rules for MCP access.
+
+Reference:
+
+```text
+templates/execution/ai-execution-brief-template.md
+integrations/mcp/mcp-registry.md
+```
+
+---
+
+## Skills to Use
+
+List required skills from:
+
+```text
+integrations/skills/skill-registry.md
+```

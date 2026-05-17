@@ -688,3 +688,43 @@ docs/usage/configuration-guide.md
 docs/usage/operating-manual.md
 docs/notes/tool-configuration-guide.md
 ```
+
+```text
+docs/usage/devin-setup-guide.md
+```
+
+---
+
+## MCP and Skills
+
+AI-CDAD supports controlled MCP usage and reusable skills.
+
+MCP configuration lives in:
+
+```text
+integrations/mcp/
+```
+
+Skill definitions live in:
+
+```text
+integrations/skills/
+```
+
+The execution brief must explicitly define:
+
+- allowed MCPs
+- forbidden MCPs
+- MCP access level
+- required skills
+- optional skills
+- stop conditions
+- required approvals
+
+Core rule:
+
+```text
+MCP access is read-only by default.
+Write/action access requires approval.
+Destructive access is a hard stop.
+```

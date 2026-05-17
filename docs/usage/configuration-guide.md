@@ -175,3 +175,65 @@ Avoid automatic permissions for:
 - cloud infrastructure changes
 
 These must remain human-approved.
+
+---
+
+### Devin
+
+Devin does not need to copy a tool configuration file into the repository root.
+
+Instead, use the Devin setup flow and session instructions.
+
+Reference:
+
+```text
+docs/usage/devin-setup-guide.md
+tool-configs/devin/devin-session-instructions.md
+```
+
+Recommended first prompt in Devin:
+
+```text
+prompts/devin/00-plan-before-files.md
+```
+
+For application repositories, use:
+
+```text
+prompts/devin/08-install-ai-cdad-in-application-repo.md
+```
+
+---
+
+## MCP and Skills Configuration
+
+Use:
+
+```text
+integrations/mcp/
+integrations/skills/
+```
+
+to define available MCPs and reusable Skills.
+
+### Add a new MCP
+
+1. Create `integrations/mcp/<mcp-name>.md`.
+2. Register it in `integrations/mcp/mcp-registry.md`.
+3. Define access level: read-only, write or destructive.
+4. Define allowed risk modes.
+5. Define required approvals.
+6. Reference it in `ai-execution-brief.md`.
+
+### Add a new Skill
+
+1. Create `integrations/skills/<skill-name>.md`.
+2. Use `integrations/skills/skill-template.md`.
+3. Register it in `integrations/skills/skill-registry.md`.
+4. Reference it in `ai-execution-brief.md`.
+
+### Agent rule
+
+If a Skill or MCP is needed but missing from the registry, the agent must not improvise.
+
+It must propose the new entry and ask for human approval when required.

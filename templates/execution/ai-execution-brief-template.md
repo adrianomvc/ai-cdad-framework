@@ -114,3 +114,56 @@ Stop if:
 Do not improvise outside this brief.
 
 If something does not fit the brief, stop and ask for the minimum required human decision.
+
+
+---
+
+## MCP Access
+
+Allowed MCPs:
+
+| MCP | Access Level | Purpose |
+|---|---|---|
+
+Forbidden MCPs:
+
+| MCP | Reason |
+|---|---|
+
+MCP Query Plan:
+
+```text
+mcp-query-plan.md
+```
+
+MCP Output:
+
+```text
+technical-context-pack.md
+```
+
+Rules:
+
+- MCP access is read-only by default.
+- Write/action access requires approval.
+- Destructive access is a hard stop.
+
+---
+
+## Skills to Use
+
+Required Skills:
+
+| Skill | Purpose |
+|---|---|
+
+Optional Skills:
+
+| Skill | When to Use |
+|---|---|
+
+Skill Registry:
+
+```text
+integrations/skills/skill-registry.md
+```

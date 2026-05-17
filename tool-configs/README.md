@@ -58,3 +58,6 @@ All tools must follow:
 - human gates
 - validation requirements
 - evidence references
+
+devin/
+  devin-session-instructions.md

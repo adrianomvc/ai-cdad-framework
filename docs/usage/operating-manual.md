@@ -124,3 +124,29 @@ rollback-plan.md
 approval-record.md
 observability-checklist.md
 ```
+
+---
+
+## Using MCPs and Skills
+
+During execution, the AI Execution Agent must check:
+
+```text
+integrations/mcp/mcp-registry.md
+integrations/skills/skill-registry.md
+```
+
+Then it must follow the current:
+
+```text
+ai-execution-brief.md
+```
+
+The brief must explicitly list:
+
+- allowed MCPs
+- forbidden MCPs
+- required skills
+- optional skills
+
+If not listed, the agent should not use them.
